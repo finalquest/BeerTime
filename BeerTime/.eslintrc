@@ -1,0 +1,17 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended",
+    "plugin:jest/recommended"
+  ],
+  "plugins": [
+    "flowtype",
+    "jest"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prop-types": ["error", { "ignore": ["navigation"] }],
+    "flowtype/no-types-missing-file-annotation": 0
+  }
+}
