@@ -1,13 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BeerListScreen test suite renders as expected 1`] = `
-<View
+<FlatList
+  data={Array []}
+  disableVirtualization={false}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  numColumns={1}
+  onEndReachedThreshold={2}
+  refreshing={false}
+  removeClippedSubviews={false}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
   style={
     Object {
       "alignSelf": "stretch",
-      "backgroundColor": "red",
+      "backgroundColor": "blue",
       "flex": 1,
     }
   }
+  updateCellsBatchingPeriod={50}
+  windowSize={21}
 />
 `;

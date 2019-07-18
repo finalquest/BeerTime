@@ -6,6 +6,10 @@ import BeerList from '../BeerList';
 
 const mockStore = configureStore();
 const initialState = {
+  beer: {
+    beers: [],
+  },
+  fetching: {},
 };
 
 describe('BeerList test suite', () => {
