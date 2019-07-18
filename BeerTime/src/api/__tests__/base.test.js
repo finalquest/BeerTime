@@ -19,10 +19,6 @@ describe('base api test suite', () => {
         });
       expect(dispatch).toHaveBeenNthCalledWith(2,
         {
-          error: undefined, request: { url: 'url' }, type: 'action', value: { data: 'data' },
-        });
-      expect(dispatch).toHaveBeenNthCalledWith(3,
-        {
           key: 'action',
           type: 'API_TRANSACTION_END',
         });

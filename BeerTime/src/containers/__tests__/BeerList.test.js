@@ -16,4 +16,19 @@ describe('BeerList test suite', () => {
     );
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should dispacth getBeer action on onMount', () => {
+    const store = mockStore({ ...initialState });
+    const wrapper = shallow(
+      <BeerList />,
+      { context: { store } },
+    );
+    wrapper.find('BeerListScreen').prop('onMounted')();
+    expect(store.getActions()).toEqual(
+      [{
+        type: 'GET_BEERS',
+        request: { url: 'https://api.punkapi.com/v2/beers' },
+      }],
+    );
+  });
 });

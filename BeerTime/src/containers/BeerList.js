@@ -1,6 +1,10 @@
 import { connect } from 'react-redux';
 import BeerListScreen from '../screens/BeerListScreen';
+import getBeers from '../model/actions/getBeers';
 
 const mapStateToProps = () => ({ });
 
-export default connect(mapStateToProps)(BeerListScreen);
+const mapDispatchToProps = dispatch => ({
+  onMounted: () => dispatch(getBeers()),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(BeerListScreen);

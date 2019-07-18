@@ -1,10 +1,10 @@
 import { GET_BEERS } from '../const/actionNames';
 
-const getFund = () => ({
+const getBeers = () => ({
   type: GET_BEERS,
   request: {
     url: 'https://api.punkapi.com/v2/beers',
   },
 });
 
-export default getFund;
+export default getBeers;
