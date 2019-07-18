@@ -17,7 +17,7 @@ exports[`BeerListScreen test suite renders as expected 1`] = `
   style={
     Object {
       "alignSelf": "stretch",
-      "backgroundColor": "blue",
+      "backgroundColor": "gray",
       "flex": 1,
     }
   }

@@ -2,20 +2,23 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  View,
   FlatList,
 } from 'react-native';
+
+import Card from '../components/Card';
+
 
 const BeerListScreen = ({ onMounted, refreshing, beers }) => {
   useEffect(() => { onMounted(); }, []);
 
   return (
     <FlatList
-      style={{ flex: 1, alignSelf: 'stretch', backgroundColor: 'blue' }}
+      style={{ flex: 1, alignSelf: 'stretch', backgroundColor: 'gray' }}
       refreshing={refreshing}
       onRefresh={onMounted}
       data={beers}
-      renderItem={() => <View style={{ height: 80, alignSelf: 'stretch', backgroundColor: 'white' }} />}
+      keyExtractor={({ id }) => `${id}`}
+      renderItem={({ item }) => <Card beer={item} />}
     />
   );
 };

@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropertyLabel test suite renders as expected 1`] = `
+<View
+  style={
+    Array [
+      Object {},
+      Object {
+        "flexDirection": "row",
+      },
+    ]
+  }
+>
+  <Label
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "fontWeight": "400",
+          "marginRight": 3,
+          "textAlign": "center",
+        },
+        Object {
+          "fontSize": 14,
+        },
+      ]
+    }
+    uppercase={false}
+  >
+    test
+  </Label>
+  <Label
+    ellipsizeMode="tail"
+    numberOfLines={1}
+    style={
+      Array [
+        Object {
+          "flexShrink": 1,
+          "textAlign": "center",
+        },
+        Object {
+          "fontSize": 14,
+        },
+      ]
+    }
+    uppercase={false}
+  >
+    v
+  </Label>
+</View>
+`;
+
+exports[`PropertyLabel test suite supports separator 1`] = `
+<View
+  style={
+    Array [
+      Object {},
+      Object {
+        "flexDirection": "row",
+      },
+    ]
+  }
+>
+  <Label
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "fontWeight": "400",
+          "marginRight": 3,
+          "textAlign": "center",
+        },
+        Object {
+          "fontSize": 14,
+        },
+      ]
+    }
+    uppercase={false}
+  >
+    test:
+  </Label>
+  <Label
+    ellipsizeMode="tail"
+    numberOfLines={1}
+    style={
+      Array [
+        Object {
+          "flexShrink": 1,
+          "textAlign": "center",
+        },
+        Object {
+          "fontSize": 14,
+        },
+      ]
+    }
+    uppercase={false}
+  >
+    v
+  </Label>
+</View>
+`;
