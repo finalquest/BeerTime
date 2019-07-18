@@ -8,6 +8,7 @@ const setHookState = newState => jest.fn();
 const reactMock = require('react');
 
 reactMock.useEffect = setHookState();
+reactMock.useState = setHookState();
 
 // React native config
 jest.mock('Linking', () => ({

@@ -12,6 +12,7 @@ exports[`BeerListScreen test suite renders as expected 1`] = `
 >
   <FilterHeader
     amount={0}
+    onFilterPressed={[Function]}
   />
   <FlatList
     data={Array []}
@@ -37,5 +38,10 @@ exports[`BeerListScreen test suite renders as expected 1`] = `
     updateCellsBatchingPeriod={50}
     windowSize={21}
   />
+  <ModalScreen
+    show={false}
+  >
+    <Connect(FilterInputScreen) />
+  </ModalScreen>
 </View>
 `;
