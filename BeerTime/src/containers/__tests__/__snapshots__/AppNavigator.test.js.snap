@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppNavigator test suite renders as expected 1`] = `
+<NavigatorReduxWrapper
+  dispatch={[Function]}
+  state={
+    Object {
+      "index": 0,
+      "key": "splash",
+      "routes": Array [
+        Object {
+          "key": "splash",
+          "routeName": "splash",
+        },
+      ],
+    }
+  }
+/>
+`;

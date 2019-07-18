@@ -1,17 +1,23 @@
 {
   "parser": "babel-eslint",
-  "extends": [
-    "airbnb",
-    "plugin:flowtype/recommended",
-    "plugin:jest/recommended"
-  ],
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "jest": true,
+    "node": true,
+    "es6": true
+  },
   "plugins": [
-    "flowtype",
-    "jest"
+    "react",
+    "react-native"
   ],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prop-types": ["error", { "ignore": ["navigation"] }],
-    "flowtype/no-types-missing-file-annotation": 0
+    "global-require":"off",
+  },
+  "globals": {
+    "shallowRenderProp": true,
+    "shallowHOC": true
   }
 }
