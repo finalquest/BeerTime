@@ -3,7 +3,7 @@ import apiCall from './api';
 import merge from '../utils/merge';
 import { API_TRANSACTION_BEGIN, API_TRANSACTION_END, API_TRANSACTION_ERROR } from '../model/const/actionNames';
 
-const apiAction = fullAction => (dispatch) => {
+const apiAction = (fullAction, next) => (dispatch) => {
   const { ...action } = fullAction;
   const {
     request, value, type,
@@ -13,7 +13,7 @@ const apiAction = fullAction => (dispatch) => {
   } = request;
   // API action
   const key = id ? `${type}-${id}` : type;
-  const resolve = dispatch;
+  const resolve = next || dispatch;
   dispatch({ type: API_TRANSACTION_BEGIN, key });
   return apiCall(url, data, options)
     .then(({ response, error }) => resolve({ ...action, value: merge(value, response, 'value', 'result'), error }))
