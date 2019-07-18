@@ -4,6 +4,7 @@ exports[`BeerList test suite renders as expected 1`] = `
 <BeerListScreen
   beers={Array []}
   onMounted={[Function]}
+  page={1}
   refreshing={false}
 />
 `;

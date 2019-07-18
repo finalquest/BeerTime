@@ -8,7 +8,9 @@ import {
 import Card from '../components/Card';
 
 
-const BeerListScreen = ({ onMounted, refreshing, beers }) => {
+const BeerListScreen = ({
+  onMounted, refreshing, beers, page,
+}) => {
   useEffect(() => { onMounted(); }, []);
 
   return (
@@ -17,7 +19,9 @@ const BeerListScreen = ({ onMounted, refreshing, beers }) => {
       refreshing={refreshing}
       onRefresh={onMounted}
       data={beers}
+      onEndReached={() => onMounted(page)}
       keyExtractor={({ id }) => `${id}`}
+      onEndReachedThreshold={0.5}
       renderItem={({ item }) => <Card beer={item} />}
     />
   );
@@ -27,11 +31,13 @@ BeerListScreen.propTypes = {
   onMounted: PropTypes.func.isRequired,
   refreshing: PropTypes.bool,
   beers: PropTypes.arrayOf(PropTypes.shape({})),
+  page: PropTypes.number,
 };
 
 BeerListScreen.defaultProps = {
   refreshing: false,
   beers: [],
+  page: 1,
 };
 
 export default BeerListScreen;

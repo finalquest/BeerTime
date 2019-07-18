@@ -31,7 +31,28 @@ describe('BeerList test suite', () => {
     expect(store.getActions()).toEqual(
       [{
         type: 'GET_BEERS',
-        request: { url: 'https://api.punkapi.com/v2/beers' },
+        value: {
+          page: 1,
+        },
+        request: { url: 'https://api.punkapi.com/v2/beers?page=1&per_page=10' },
+      }],
+    );
+  });
+
+  it('should dispacth getBeer action with page + 1', () => {
+    const store = mockStore({ ...initialState });
+    const wrapper = shallow(
+      <BeerList />,
+      { context: { store } },
+    );
+    wrapper.find('BeerListScreen').prop('onMounted')(1);
+    expect(store.getActions()).toEqual(
+      [{
+        type: 'GET_BEERS',
+        value: {
+          page: 2,
+        },
+        request: { url: 'https://api.punkapi.com/v2/beers?page=2&per_page=10' },
       }],
     );
   });
