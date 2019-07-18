@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterHeader test suite renders as expected 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "backgroundColor": "white",
+      "height": 50,
+    }
+  }
+>
+  <PropertyLabel
+    Component={[Function]}
+    ellipsizeMode="tail"
+    fontSize={14}
+    name="Total beers"
+    nameStyles={
+      Object {
+        "fontWeight": "600",
+      }
+    }
+    numberOfLines={1}
+    separator=":"
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+      }
+    }
+    value="2"
+    valueStyles={
+      Object {
+        "flexShrink": 1,
+        "textAlign": "center",
+      }
+    }
+  />
+</View>
+`;

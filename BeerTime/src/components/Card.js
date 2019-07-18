@@ -73,4 +73,3 @@ Card.defaultProps = {
 };
 
 export default Card;
-// export default ProductBox;
