@@ -18,7 +18,8 @@
     "redux": "4.0.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "2.2.0",
-    "prop-types": "15.6.0"
+    "prop-types": "15.6.0",
+    "jquery-param": "1.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.4.4",
