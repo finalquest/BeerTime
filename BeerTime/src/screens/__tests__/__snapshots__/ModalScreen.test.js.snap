@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalScreen test suite renders as expected 1`] = `
+<Component
+  animationType="fade"
+  hardwareAccelerated={false}
+  transparent={true}
+  visible={false}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(0, 0, 0, 0.8)",
+        "flex": 1,
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <Text>
+      Test
+    </Text>
+  </View>
+</Component>
+`;

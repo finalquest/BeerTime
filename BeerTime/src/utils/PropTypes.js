@@ -15,3 +15,8 @@ export const BeerProptype = PropTypes.shape({
   tagline: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 });
+
+export const ChildPropType = PropTypes.oneOfType([
+  PropTypes.arrayOf(PropTypes.node),
+  PropTypes.node,
+]);
