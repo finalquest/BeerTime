@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterInput test suite renders as expected 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+    }
+  }
+>
+  <Label
+    ellipsizeMode="tail"
+    style={Object {}}
+    uppercase={false}
+  >
+    Testing
+  </Label>
+</View>
+`;

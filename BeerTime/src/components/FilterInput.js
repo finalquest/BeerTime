@@ -6,13 +6,13 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import Label from '../components/Label';
+import Label from './Label';
 
 const styles = StyleSheet.create({
   container: { backgroundColor: 'white' },
 });
 
-const FilterInputScreen = () => (
+const FilterInput = () => (
   <View style={styles.container}>
     <Label>
     Testing
@@ -20,12 +20,12 @@ const FilterInputScreen = () => (
   </View>
 );
 
-FilterInputScreen.propTypes = {
+FilterInput.propTypes = {
 
 };
 
-FilterInputScreen.defaultProps = {
+FilterInput.defaultProps = {
 
 };
 
-export default FilterInputScreen;
+export default FilterInput;

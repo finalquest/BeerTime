@@ -10,7 +10,7 @@ import {
 import Card from '../components/Card';
 import FilterHeader from '../components/FilterHeader';
 import ModalScreen from './ModalScreen';
-import FilterInput from '../containers/FilterInput';
+import FilterInput from '../components/FilterInput';
 
 const styles = StyleSheet.create({
   container: { flex: 1, alignSelf: 'stretch', backgroundColor: 'gray' },

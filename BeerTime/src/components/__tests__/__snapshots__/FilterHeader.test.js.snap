@@ -6,7 +6,9 @@ exports[`FilterHeader test suite renders as expected 1`] = `
     Object {
       "alignSelf": "stretch",
       "backgroundColor": "white",
+      "flexDirection": "row",
       "height": 50,
+      "justifyContent": "space-between",
     }
   }
 >
@@ -36,5 +38,19 @@ exports[`FilterHeader test suite renders as expected 1`] = `
       }
     }
   />
+  <TouchableOpacity>
+    <Image
+      source={1}
+      style={
+        Object {
+          "alignSelf": "center",
+          "height": 25,
+          "margin": 10,
+          "resizeMode": "contain",
+          "width": 25,
+        }
+      }
+    />
+  </TouchableOpacity>
 </View>
 `;

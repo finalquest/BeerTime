@@ -41,7 +41,7 @@ exports[`BeerListScreen test suite renders as expected 1`] = `
   <ModalScreen
     show={false}
   >
-    <Connect(FilterInputScreen) />
+    <FilterInput />
   </ModalScreen>
 </View>
 `;
