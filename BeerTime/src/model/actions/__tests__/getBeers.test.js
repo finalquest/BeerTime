@@ -20,7 +20,11 @@ describe('getBeers test suite', () => {
     expect(getBeers()).toEqual({
       type: 'GET_BEERS',
       request: {
-        url: 'https://api.punkapi.com/v2/beers?page=1&per_page=10',
+        url: 'https://api.punkapi.com/v2/beers',
+        data: {
+          page: 1,
+          per_page: 10,
+        },
       },
       value: {
         page: 1,
@@ -38,7 +42,13 @@ describe('getBeers test suite', () => {
         [{ type: 'API_TRANSACTION_BEGIN', key: 'GET_BEERS' },
           {
             type: 'GET_BEERS',
-            request: { url: 'https://api.punkapi.com/v2/beers?page=1&per_page=10' },
+            request: {
+              url: 'https://api.punkapi.com/v2/beers',
+              data: {
+                page: 1,
+                per_page: 10,
+              },
+            },
             value: { data: 'data' },
             error: undefined,
           },
@@ -57,7 +67,13 @@ describe('getBeers test suite', () => {
         [{ type: 'API_TRANSACTION_BEGIN', key: 'GET_BEERS' },
           {
             type: 'GET_BEERS',
-            request: { url: 'https://api.punkapi.com/v2/beers?page=2&per_page=10' },
+            request: {
+              url: 'https://api.punkapi.com/v2/beers',
+              data: {
+                page: 2,
+                per_page: 10,
+              },
+            },
             value: { data: 'data' },
             error: undefined,
           },
