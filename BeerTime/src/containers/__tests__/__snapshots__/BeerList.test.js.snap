@@ -5,9 +5,11 @@ exports[`BeerList test suite renders as expected 1`] = `
   applyFilter={[Function]}
   beers={Array []}
   endReached={false}
+  fromBrewDate=""
   onEndReached={[Function]}
   onMounted={[Function]}
   page={1}
   refreshing={false}
+  toBrewDate=""
 />
 `;

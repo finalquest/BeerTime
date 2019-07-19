@@ -40,4 +40,22 @@ describe('TextInput test suite', () => {
     wrapper.find('TextInput').prop('onChangeText')();
     expect(onPress).toBeCalled();
   });
+
+  it('renders as expected with error in props', () => {
+    const props = {
+      label: 'label',
+      labelStyle: {
+        fontSize: 12,
+      },
+      style: {
+        height: 30,
+        borderBottomWidth: 1,
+        borderColor: 'lightgray',
+      },
+      onChange: () => {},
+      error: 'error',
+    };
+    const wrapper = shallow(<Input {...props} />);
+    expect(wrapper).toMatchSnapshot();
+  });
 });

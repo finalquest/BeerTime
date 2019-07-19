@@ -17,14 +17,14 @@ describe('BeerListScreen test suite', () => {
     const mounted = jest.fn();
     const wrapper = shallow(<Screen page={2} onEndReached={mounted} />);
     wrapper.find('FlatList').prop('onEndReached')();
-    expect(mounted).toBeCalledWith(2, undefined);
+    expect(mounted).toBeCalledWith(2, { fromBrewDate: '', name: undefined, toBrewDate: '' });
   });
 
   it('should call onEndReached with page and name', () => {
     const mounted = jest.fn();
-    const wrapper = shallow(<Screen page={3} name="name" onEndReached={mounted} />);
+    const wrapper = shallow(<Screen page={3} name="name" fromBrewDate="brewDate" toBrewDate="toBrew" onEndReached={mounted} />);
     wrapper.find('FlatList').prop('onEndReached')();
-    expect(mounted).toBeCalledWith(3, 'name');
+    expect(mounted).toBeCalledWith(3, { name: 'name', fromBrewDate: 'brewDate', toBrewDate: 'toBrew' });
   });
 
   it('should update state when header onpress', () => {

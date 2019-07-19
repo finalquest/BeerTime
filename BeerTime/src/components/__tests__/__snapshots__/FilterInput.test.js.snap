@@ -44,7 +44,48 @@ exports[`FilterInput test suite renders as expected 1`] = `
         "marginBottom": 5,
       }
     }
-    value={false}
+  />
+  <TextInput
+    keyboardType="default"
+    label="After First Brew Date"
+    labelStyle={
+      Object {
+        "color": "dimgrey",
+        "fontSize": 12,
+        "marginBottom": 5,
+        "marginTop": 5,
+      }
+    }
+    onChange={[Function]}
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "lightgray",
+        "marginBottom": 5,
+      }
+    }
+    value=""
+  />
+  <TextInput
+    keyboardType="default"
+    label="Before First Brew Date"
+    labelStyle={
+      Object {
+        "color": "dimgrey",
+        "fontSize": 12,
+        "marginBottom": 5,
+        "marginTop": 5,
+      }
+    }
+    onChange={[Function]}
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "lightgray",
+        "marginBottom": 5,
+      }
+    }
+    value=""
   />
   <View
     style={

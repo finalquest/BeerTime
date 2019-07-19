@@ -7,11 +7,12 @@ import {
 import PropTypes from 'prop-types';
 import Label from './Label';
 import { StylePropType } from '../utils/PropTypes';
+import InlineError from './InlineError';
 
 
 const TextInput = ({
   label, labelStyle, style, onChange,
-  keyboardType, value,
+  keyboardType, value, error,
 }) => {
   const valueProp = value ? { value } : {};
   return (
@@ -25,6 +26,7 @@ const TextInput = ({
         style={[style]}
         {...valueProp}
       />
+      <InlineError error={error} />
     </View>
   );
 };
@@ -35,12 +37,14 @@ TextInput.propTypes = {
   onChange: PropTypes.func.isRequired,
   keyboardType: PropTypes.string,
   value: PropTypes.string,
+  error: PropTypes.string,
 };
 TextInput.defaultProps = {
   style: undefined,
   labelStyle: undefined,
   keyboardType: 'default',
   value: undefined,
+  error: undefined,
 };
 
 export default TextInput;

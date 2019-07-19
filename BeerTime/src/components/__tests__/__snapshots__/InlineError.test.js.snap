@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InlineError test suite renders as expected 1`] = `
+<Label
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {
+        "color": "red",
+        "fontSize": 11,
+      },
+      Object {},
+    ]
+  }
+  uppercase={false}
+>
+  pepe
+</Label>
+`;

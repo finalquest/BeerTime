@@ -15,7 +15,19 @@ describe('FilterInput test suite', () => {
 
   it('should set inputvalue state on textInput onChange', () => {
     const wrapper = shallow(<FilterInput />);
-    wrapper.find('TextInput').prop('onChange')('test');
+    wrapper.find('TextInput').at(0).prop('onChange')('test');
+    expect(setState).toBeCalledWith('test');
+  });
+
+  it('should set toBrewDate state on textInput onChange', () => {
+    const wrapper = shallow(<FilterInput />);
+    wrapper.find('TextInput').at(1).prop('onChange')('test');
+    expect(setState).toBeCalledWith('test');
+  });
+
+  it('should set fromBrewDate state on textInput onChange', () => {
+    const wrapper = shallow(<FilterInput />);
+    wrapper.find('TextInput').at(2).prop('onChange')('test');
     expect(setState).toBeCalledWith('test');
   });
 

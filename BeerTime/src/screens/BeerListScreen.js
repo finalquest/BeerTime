@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
 });
 
 const BeerListScreen = ({
-  onMounted, onEndReached, endReached, refreshing, beers, page, name, applyFilter,
+  onMounted, onEndReached, endReached, refreshing,
+  beers, page, name, toBrewDate, fromBrewDate, applyFilter,
 }) => {
   useEffect(() => { onMounted(); }, []);
   const [showModal, setShowModal] = useState(false);
@@ -49,7 +50,7 @@ const BeerListScreen = ({
         data={beers}
         onEndReached={() => {
           if (!endReached && !refreshing) {
-            antiBounce(page, name);
+            antiBounce(page, { name, toBrewDate, fromBrewDate });
           }
         }}
         keyExtractor={({ id }) => `${id}`}
@@ -61,8 +62,8 @@ const BeerListScreen = ({
           onFilterCancel={() => {
             setShowModal(false);
           }}
-          onFilterSelected={({ name: beerName }) => {
-            applyFilter(beerName);
+          onFilterSelected={({ name: beerName, fromBrewDate: fbd, toBrewDate: tbd }) => {
+            applyFilter({ name: beerName, fromBrewDate: fbd, toBrewDate: tbd });
             setShowModal(false);
           }}
         />
@@ -80,6 +81,8 @@ BeerListScreen.propTypes = {
   name: PropTypes.string,
   onEndReached: PropTypes.func.isRequired,
   endReached: PropTypes.bool,
+  fromBrewDate: PropTypes.string,
+  toBrewDate: PropTypes.string,
 };
 
 BeerListScreen.defaultProps = {
@@ -88,6 +91,8 @@ BeerListScreen.defaultProps = {
   page: 1,
   name: undefined,
   endReached: false,
+  fromBrewDate: '',
+  toBrewDate: '',
 };
 
 export default BeerListScreen;

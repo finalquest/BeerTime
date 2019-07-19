@@ -1,8 +1,14 @@
 import { GET_BEERS, GET_BEERS_FILTER } from '../const/actionNames';
 
-const getBeers = (page = 1, name, onlyRefresh = false) => {
+const validBrewDates = (from, to) => (from && from !== '') || (to && to !== '');
+
+const getBeers = (page = 1, { name, fromBrewDate, toBrewDate } = {}, onlyRefresh = false) => {
   const nameParams = name ? { beer_name: name } : {};
-  const type = name && !onlyRefresh ? GET_BEERS_FILTER : GET_BEERS;
+  const toBrewParams = toBrewDate && toBrewDate !== '' ? { brewed_before: toBrewDate } : {};
+  const fromBrewParams = fromBrewDate && fromBrewDate !== '' ? { brewed_after: fromBrewDate } : {};
+
+  const type = (name || validBrewDates(fromBrewDate, toBrewDate)) && !onlyRefresh
+    ? GET_BEERS_FILTER : GET_BEERS;
   return (
     {
       type,
@@ -12,11 +18,15 @@ const getBeers = (page = 1, name, onlyRefresh = false) => {
           page,
           per_page: 10,
           ...nameParams,
+          ...toBrewParams,
+          ...fromBrewParams,
         },
       },
       value: {
         page,
         name,
+        toBrewDate,
+        fromBrewDate,
       },
     });
 };

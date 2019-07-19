@@ -64,8 +64,34 @@ const styles = StyleSheet.create({
 });
 
 const FilterInput = ({ onFilterSelected, onFilterCancel }) => {
-  const [inputValue, setInputValue] = useState(false);
+  const [inputValue, setInputValue] = useState(undefined);
+  const [fromBrewDate, setFromBrewDate] = useState({ value: '' });
+  const [toBrewDate, setToBrewDate] = useState({ value: '' });
 
+  const validateInput = () => {
+    const datePattern = /[\d]{2}-[\d]{4}$/;
+    const { value: toBrewDateValue } = toBrewDate;
+    const { value: fromBrewDateValue } = fromBrewDate;
+
+    let error = false;
+
+    if (toBrewDateValue !== '' && !datePattern.test(toBrewDateValue)) {
+      setToBrewDate({ value: toBrewDateValue, error: 'Invalid format. Should be MM-YYYY' });
+      error = true;
+    }
+    if (fromBrewDateValue !== '' && !datePattern.test(fromBrewDateValue)) {
+      setFromBrewDate({ value: fromBrewDateValue, error: 'Invalid format. Should be MM-YYYY' });
+      error = true;
+    }
+
+    if (!error) {
+      onFilterSelected({
+        name: inputValue,
+        fromBrewDate: fromBrewDateValue,
+        toBrewDate: toBrewDateValue,
+      });
+    }
+  };
   return (
     <View style={styles.container}>
       <Label style={styles.title}>Search</Label>
@@ -78,11 +104,32 @@ const FilterInput = ({ onFilterSelected, onFilterCancel }) => {
           setInputValue(text);
         }}
       />
+      <TextInput
+        label="After First Brew Date"
+        style={styles.input}
+        labelStyle={styles.inputLabel}
+        value={fromBrewDate.value}
+        error={fromBrewDate.error}
+        onChange={(text) => {
+          setFromBrewDate({ value: text });
+        }}
+      />
+      <TextInput
+        label="Before First Brew Date"
+        style={styles.input}
+        labelStyle={styles.inputLabel}
+        value={toBrewDate.value}
+        error={toBrewDate.error}
+        onChange={(text) => {
+          setToBrewDate({ value: text });
+        }}
+      />
       <View style={{ flexDirection: 'row', alignSelf: 'stretch' }}>
         <TouchableOpacity
           style={styles.primary}
           onPress={() => {
-            onFilterSelected({ name: inputValue });
+            validateInput();
+            // onFilterSelected({ name: inputValue, fromBrewDate });
           }}
         >
           <Label style={styles.text}>OK</Label>
