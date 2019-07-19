@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput test suite renders as expected with standar props 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+    }
+  }
+>
+  <Label
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "fontSize": 12,
+      }
+    }
+    uppercase={false}
+  >
+    label
+  </Label>
+  <TextInput
+    allowFontScaling={true}
+    autoCorrect={false}
+    keyboardType="default"
+    onChangeText={[Function]}
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "borderBottomWidth": 1,
+          "borderColor": "lightgray",
+          "height": 30,
+        },
+      ]
+    }
+    underlineColorAndroid="transparent"
+  />
+</View>
+`;
