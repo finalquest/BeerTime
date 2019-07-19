@@ -13,16 +13,22 @@ describe('BeerListScreen test suite', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should call onMount with page', () => {
+  it('should call onEndReached with page', () => {
     const mounted = jest.fn();
-    const wrapper = shallow(<Screen item={{ page: 1 }} onMounted={mounted} />);
+    const wrapper = shallow(<Screen page={2} onEndReached={mounted} />);
     wrapper.find('FlatList').prop('onEndReached')();
-    expect(mounted).toBeCalledWith(1);
+    expect(mounted).toBeCalledWith(2, undefined);
+  });
+
+  it('should call onEndReached with page and name', () => {
+    const mounted = jest.fn();
+    const wrapper = shallow(<Screen page={3} name="name" onEndReached={mounted} />);
+    wrapper.find('FlatList').prop('onEndReached')();
+    expect(mounted).toBeCalledWith(3, 'name');
   });
 
   it('should update state when header onpress', () => {
-    const mounted = jest.fn();
-    const wrapper = shallow(<Screen item={{ page: 1 }} onMounted={mounted} />);
+    const wrapper = shallow(<Screen />);
     wrapper.find('FilterHeader').prop('onFilterPressed')();
     expect(setState).toBeCalledWith(true);
   });

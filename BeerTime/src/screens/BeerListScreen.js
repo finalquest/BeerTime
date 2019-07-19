@@ -17,11 +17,22 @@ const styles = StyleSheet.create({
 });
 
 const BeerListScreen = ({
-  onMounted, refreshing, beers, page,
+  onMounted, onEndReached, endReached, refreshing, beers, page, name, applyFilter,
 }) => {
   useEffect(() => { onMounted(); }, []);
   const [showModal, setShowModal] = useState(false);
+  const [disabled, setDisabled] = useState(false);
 
+
+  const antiBounce = (currentPage, beerName) => {
+    if (!disabled) {
+      onEndReached(currentPage, beerName);
+      setDisabled(true);
+      setTimeout(() => {
+        setDisabled(false);
+      }, 1200);
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -36,13 +47,25 @@ const BeerListScreen = ({
         refreshing={refreshing}
         onRefresh={onMounted}
         data={beers}
-        onEndReached={() => onMounted(page)}
+        onEndReached={() => {
+          if (!endReached && !refreshing) {
+            antiBounce(page, name);
+          }
+        }}
         keyExtractor={({ id }) => `${id}`}
-        onEndReachedThreshold={0.5}
+        onEndReachedThreshold={0.3}
         renderItem={({ item }) => <Card beer={item} />}
       />
       <ModalScreen show={showModal}>
-        <FilterInput />
+        <FilterInput
+          onFilterCancel={() => {
+            setShowModal(false);
+          }}
+          onFilterSelected={({ name: beerName }) => {
+            applyFilter(beerName);
+            setShowModal(false);
+          }}
+        />
       </ModalScreen>
     </View>
   );
@@ -53,12 +76,18 @@ BeerListScreen.propTypes = {
   refreshing: PropTypes.bool,
   beers: PropTypes.arrayOf(PropTypes.shape({})),
   page: PropTypes.number,
+  applyFilter: PropTypes.func.isRequired,
+  name: PropTypes.string,
+  onEndReached: PropTypes.func.isRequired,
+  endReached: PropTypes.bool,
 };
 
 BeerListScreen.defaultProps = {
   refreshing: false,
   beers: [],
   page: 1,
+  name: undefined,
+  endReached: false,
 };
 
 export default BeerListScreen;

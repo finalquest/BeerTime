@@ -81,4 +81,56 @@ describe('getBeers test suite', () => {
       );
     });
   });
+
+  it('should dispatch with name param', () => {
+    const body = JSON.stringify(response);
+    fetch.once(body);
+    const store = mockStore(initialState);
+    return store.dispatch(getBeers(2, 'test')).then(() => {
+      expect(fetch.mock.calls[0][0]).toEqual('https://api.punkapi.com/v2/beers?page=2&per_page=10&beer_name=test');
+      expect(store.getActions()).toMatchObject(
+        [{ type: 'API_TRANSACTION_BEGIN', key: 'GET_BEERS_FILTER' },
+          {
+            type: 'GET_BEERS_FILTER',
+            request: {
+              url: 'https://api.punkapi.com/v2/beers',
+              data: {
+                page: 2,
+                per_page: 10,
+                beer_name: 'test',
+              },
+            },
+            value: { data: 'data' },
+            error: undefined,
+          },
+          { type: 'API_TRANSACTION_END', key: 'GET_BEERS_FILTER' }],
+      );
+    });
+  });
+
+  it('should refresh if flag set', () => {
+    const body = JSON.stringify(response);
+    fetch.once(body);
+    const store = mockStore(initialState);
+    return store.dispatch(getBeers(2, 'test', true)).then(() => {
+      expect(fetch.mock.calls[0][0]).toEqual('https://api.punkapi.com/v2/beers?page=2&per_page=10&beer_name=test');
+      expect(store.getActions()).toMatchObject(
+        [{ type: 'API_TRANSACTION_BEGIN', key: 'GET_BEERS' },
+          {
+            type: 'GET_BEERS',
+            request: {
+              url: 'https://api.punkapi.com/v2/beers',
+              data: {
+                page: 2,
+                per_page: 10,
+                beer_name: 'test',
+              },
+            },
+            value: { data: 'data' },
+            error: undefined,
+          },
+          { type: 'API_TRANSACTION_END', key: 'GET_BEERS' }],
+      );
+    });
+  });
 });

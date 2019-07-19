@@ -82,7 +82,7 @@ const FilterInput = ({ onFilterSelected, onFilterCancel }) => {
         <TouchableOpacity
           style={styles.primary}
           onPress={() => {
-            onFilterSelected();
+            onFilterSelected({ name: inputValue });
           }}
         >
           <Label style={styles.text}>OK</Label>
