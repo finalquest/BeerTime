@@ -4,16 +4,77 @@ exports[`FilterInput test suite renders as expected 1`] = `
 <View
   style={
     Object {
+      "alignSelf": "stretch",
       "backgroundColor": "white",
+      "marginHorizontal": 20,
+      "padding": 20,
     }
   }
 >
   <Label
     ellipsizeMode="tail"
-    style={Object {}}
+    style={
+      Object {
+        "fontSize": 18,
+        "fontWeight": "400",
+        "marginBottom": 20,
+        "textAlign": "left",
+      }
+    }
     uppercase={false}
   >
-    Testing
+    Search
   </Label>
+  <TextInput
+    keyboardType="default"
+    label="Beer Name"
+    labelStyle={
+      Object {
+        "color": "dimgrey",
+        "fontSize": 12,
+        "marginBottom": 5,
+        "marginTop": 5,
+      }
+    }
+    onChange={[Function]}
+    style={
+      Object {
+        "borderBottomWidth": 1,
+        "borderColor": "lightgray",
+        "marginBottom": 5,
+      }
+    }
+    value={false}
+  />
+  <View>
+    <TouchableOpacity
+      onPress={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "stretch",
+          "backgroundColor": "#4169ff",
+          "borderRadius": 5,
+          "flexDirection": "row",
+          "height": 45,
+          "justifyContent": "center",
+          "marginTop": 10,
+        }
+      }
+    >
+      <Label
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "white",
+            "fontSize": 18,
+          }
+        }
+        uppercase={false}
+      >
+        OK
+      </Label>
+    </TouchableOpacity>
+  </View>
 </View>
 `;
