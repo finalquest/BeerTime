@@ -22,7 +22,14 @@ describe('FilterInput test suite', () => {
   it('should call callback if ok button pressed', () => {
     const selected = jest.fn();
     const wrapper = shallow(<FilterInput onFilterSelected={selected} />);
-    wrapper.find('TouchableOpacity').prop('onPress')();
+    wrapper.find('TouchableOpacity').at(0).prop('onPress')();
+    expect(selected).toBeCalled();
+  });
+
+  it('should call callback if ok button pressed', () => {
+    const selected = jest.fn();
+    const wrapper = shallow(<FilterInput onFilterCancel={selected} />);
+    wrapper.find('TouchableOpacity').at(1).prop('onPress')();
     expect(selected).toBeCalled();
   });
 });

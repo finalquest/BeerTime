@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   primary: {
+    flex: 1,
     backgroundColor: '#4169ff',
     height: 45,
     alignSelf: 'stretch',
@@ -45,14 +46,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 5,
+    marginHorizontal: 5,
   },
   text: {
     color: 'white',
     fontSize: 18,
   },
+  secondary: {
+    backgroundColor: 'white',
+    borderColor: '#4169ff',
+    borderWidth: 1,
+  },
+  textSecondary: {
+    color: '#4169ff',
+    fontSize: 18,
+  },
 });
 
-const FilterInput = ({ onFilterSelected }) => {
+const FilterInput = ({ onFilterSelected, onFilterCancel }) => {
   const [inputValue, setInputValue] = useState(false);
 
   return (
@@ -67,7 +78,7 @@ const FilterInput = ({ onFilterSelected }) => {
           setInputValue(text);
         }}
       />
-      <View>
+      <View style={{ flexDirection: 'row', alignSelf: 'stretch' }}>
         <TouchableOpacity
           style={styles.primary}
           onPress={() => {
@@ -76,6 +87,14 @@ const FilterInput = ({ onFilterSelected }) => {
         >
           <Label style={styles.text}>OK</Label>
         </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.primary, styles.secondary]}
+          onPress={() => {
+            onFilterCancel();
+          }}
+        >
+          <Label style={[styles.text, styles.textSecondary]}>Cancel</Label>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -83,6 +102,7 @@ const FilterInput = ({ onFilterSelected }) => {
 
 FilterInput.propTypes = {
   onFilterSelected: PropTypes.func.isRequired,
+  onFilterCancel: PropTypes.func.isRequired,
 };
 
 FilterInput.defaultProps = {

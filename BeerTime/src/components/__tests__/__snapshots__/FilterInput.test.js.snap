@@ -46,7 +46,14 @@ exports[`FilterInput test suite renders as expected 1`] = `
     }
     value={false}
   />
-  <View>
+  <View
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "flexDirection": "row",
+      }
+    }
+  >
     <TouchableOpacity
       onPress={[Function]}
       style={
@@ -55,9 +62,11 @@ exports[`FilterInput test suite renders as expected 1`] = `
           "alignSelf": "stretch",
           "backgroundColor": "#4169ff",
           "borderRadius": 5,
+          "flex": 1,
           "flexDirection": "row",
           "height": 45,
           "justifyContent": "center",
+          "marginHorizontal": 5,
           "marginTop": 10,
         }
       }
@@ -73,6 +82,49 @@ exports[`FilterInput test suite renders as expected 1`] = `
         uppercase={false}
       >
         OK
+      </Label>
+    </TouchableOpacity>
+    <TouchableOpacity
+      onPress={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "alignSelf": "stretch",
+            "backgroundColor": "#4169ff",
+            "borderRadius": 5,
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 45,
+            "justifyContent": "center",
+            "marginHorizontal": 5,
+            "marginTop": 10,
+          },
+          Object {
+            "backgroundColor": "white",
+            "borderColor": "#4169ff",
+            "borderWidth": 1,
+          },
+        ]
+      }
+    >
+      <Label
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "white",
+              "fontSize": 18,
+            },
+            Object {
+              "color": "#4169ff",
+              "fontSize": 18,
+            },
+          ]
+        }
+        uppercase={false}
+      >
+        Cancel
       </Label>
     </TouchableOpacity>
   </View>
