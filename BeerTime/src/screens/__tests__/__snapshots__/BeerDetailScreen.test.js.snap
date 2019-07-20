@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BeerDetailScreen test suite renders as expected 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "backgroundColor": "gray",
+      "flex": 1,
+    }
+  }
+/>
+`;

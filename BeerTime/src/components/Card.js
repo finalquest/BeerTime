@@ -3,7 +3,10 @@ import {
   View,
   Image,
   StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
+
+import PropTypes from 'prop-types';
 
 import { BeerProptype } from '../utils/PropTypes';
 import Label from './Label';
@@ -41,12 +44,12 @@ const styles = StyleSheet.create({
 });
 
 
-const Card = ({ beer }) => {
+const Card = ({ beer, onItemSelected }) => {
   const {
     image_url: imageUrl, name, tagline, first_brewed: firstBrewed,
   } = beer;
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={() => onItemSelected()}>
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
@@ -63,11 +66,12 @@ const Card = ({ beer }) => {
           separator=":"
         />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 Card.propTypes = {
   beer: BeerProptype.isRequired,
+  onItemSelected: PropTypes.func.isRequired,
 };
 Card.defaultProps = {
 };

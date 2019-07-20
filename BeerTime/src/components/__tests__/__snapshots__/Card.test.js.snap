@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card test suite renders as expected 1`] = `
-<View
+<TouchableOpacity
+  onPress={[Function]}
   style={
     Object {
       "backgroundColor": "white",
@@ -94,5 +95,5 @@ exports[`Card test suite renders as expected 1`] = `
       }
     />
   </View>
-</View>
+</TouchableOpacity>
 `;

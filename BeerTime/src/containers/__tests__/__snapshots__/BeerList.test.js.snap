@@ -7,6 +7,7 @@ exports[`BeerList test suite renders as expected 1`] = `
   endReached={false}
   fromBrewDate=""
   onEndReached={[Function]}
+  onItemSelected={[Function]}
   onMounted={[Function]}
   page={1}
   refreshing={false}

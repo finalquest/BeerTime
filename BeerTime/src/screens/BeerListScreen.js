@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 
 const BeerListScreen = ({
   onMounted, onEndReached, endReached, refreshing,
-  beers, page, name, toBrewDate, fromBrewDate, applyFilter,
+  beers, page, name, toBrewDate, fromBrewDate, applyFilter, onItemSelected,
 }) => {
   useEffect(() => { onMounted(); }, []);
   const [showModal, setShowModal] = useState(false);
@@ -55,7 +55,7 @@ const BeerListScreen = ({
         }}
         keyExtractor={({ id }) => `${id}`}
         onEndReachedThreshold={0.3}
-        renderItem={({ item }) => <Card beer={item} />}
+        renderItem={({ item }) => <Card beer={item} onItemSelected={onItemSelected} />}
       />
       <ModalScreen show={showModal}>
         <FilterInput
@@ -83,6 +83,7 @@ BeerListScreen.propTypes = {
   endReached: PropTypes.bool,
   fromBrewDate: PropTypes.string,
   toBrewDate: PropTypes.string,
+  onItemSelected: PropTypes.func.isRequired,
 };
 
 BeerListScreen.defaultProps = {
