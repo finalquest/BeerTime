@@ -14,6 +14,12 @@ export const BeerProptype = PropTypes.shape({
   image_url: PropTypes.string.isRequired,
   tagline: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  description: PropTypes.strings.isRequired,
+  abv: PropTypes.string.isRequired,
+  volume: PropTypes.shape({
+    value: PropTypes.number,
+    unit: PropTypes.string,
+  }).isRequired,
 });
 
 export const ChildPropType = PropTypes.oneOfType([
