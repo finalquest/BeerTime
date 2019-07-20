@@ -31,6 +31,30 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     marginRight: 3,
   },
+  descriptionContainer: {
+    alignSelf: 'stretch',
+    justifyContent: 'center',
+    backgroundColor: '#F2FCF7',
+    borderColor: '#02C66A',
+    borderRadius: 5,
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    paddingVertical: 15,
+    marginVertical: 20,
+    overflow: 'hidden',
+  },
+  volumeContainer: {
+    alignSelf: 'stretch',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    backgroundColor: '#F2FCF7',
+    borderColor: '#02C66A',
+    borderRadius: 5,
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    paddingVertical: 15,
+    overflow: 'hidden',
+  },
 });
 
 const BeerDetailScreen = ({
@@ -41,38 +65,44 @@ const BeerDetailScreen = ({
   <View style={styles.container}>
     <View style={{ alignSelf: 'stretch' }}>
       <BackArrow onPress={onBack} />
-      <View style={{ margin: 10 }}>
+      <View style={{ marginHorizontal: 10 }}>
         <Label style={styles.title}>{name}</Label>
         <Label style={styles.subTitle}>{tagline}</Label>
-        <Label style={[styles.description, { marginVertical: 5 }]}>{description}</Label>
-        <PropertyLabel
-          name="ABV"
-          style={{ marginVertical: 5 }}
-          numberOfLines={0}
-          nameStyles={[styles.description, { fontWeight: '600' }]}
-          valueStyles={styles.description}
-          value={abv}
-          separator=":"
-        />
-        <PropertyLabel
-          name="Volume"
-          style={{ marginVertical: 5 }}
-          numberOfLines={0}
-          nameStyles={[styles.description, { fontWeight: '600' }]}
-          valueStyles={styles.description}
-          value={`${value} ${unit}`}
-          separator=":"
-        />
-        {foodPairing.length > 0 ? (
+        <View style={styles.descriptionContainer}>
+          <Label style={[styles.description, { marginVertical: 5 }]}>{description}</Label>
+        </View>
+        <View style={styles.volumeContainer}>
           <PropertyLabel
-            name="Food Pairing"
+            name="ABV"
             style={{ marginVertical: 5 }}
             numberOfLines={0}
             nameStyles={[styles.description, { fontWeight: '600' }]}
             valueStyles={styles.description}
-            value={foodPairing.join('\n')}
+            value={abv}
             separator=":"
           />
+          <PropertyLabel
+            name="Volume"
+            style={{ marginVertical: 5 }}
+            numberOfLines={0}
+            nameStyles={[styles.description, { fontWeight: '600' }]}
+            valueStyles={styles.description}
+            value={`${value} ${unit}`}
+            separator=":"
+          />
+        </View>
+        {foodPairing.length > 0 ? (
+          <View style={styles.descriptionContainer}>
+            <PropertyLabel
+              name="Food Pairing"
+              style={{ marginVertical: 5 }}
+              numberOfLines={0}
+              nameStyles={[styles.description, { fontWeight: '600' }]}
+              valueStyles={styles.description}
+              value={foodPairing.join('\n')}
+              separator=":"
+            />
+          </View>
         ) : undefined}
       </View>
     </View>

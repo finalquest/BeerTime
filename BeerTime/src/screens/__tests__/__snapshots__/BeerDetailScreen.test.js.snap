@@ -28,7 +28,7 @@ exports[`BeerDetailScreen test suite renders as expected 1`] = `
     <View
       style={
         Object {
-          "margin": 10,
+          "marginHorizontal": 10,
         }
       }
     >
@@ -57,123 +57,174 @@ exports[`BeerDetailScreen test suite renders as expected 1`] = `
       >
         tagline
       </Label>
-      <Label
-        ellipsizeMode="tail"
+      <View
         style={
-          Array [
-            Object {
-              "fontWeight": "400",
-              "marginRight": 3,
-              "textAlign": "left",
-            },
+          Object {
+            "alignSelf": "stretch",
+            "backgroundColor": "#F2FCF7",
+            "borderColor": "#02C66A",
+            "borderRadius": 5,
+            "borderWidth": 1,
+            "justifyContent": "center",
+            "marginVertical": 20,
+            "overflow": "hidden",
+            "paddingHorizontal": 10,
+            "paddingVertical": 15,
+          }
+        }
+      >
+        <Label
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "fontWeight": "400",
+                "marginRight": 3,
+                "textAlign": "left",
+              },
+              Object {
+                "marginVertical": 5,
+              },
+            ]
+          }
+          uppercase={false}
+        >
+          description
+        </Label>
+      </View>
+      <View
+        style={
+          Object {
+            "alignSelf": "stretch",
+            "backgroundColor": "#F2FCF7",
+            "borderColor": "#02C66A",
+            "borderRadius": 5,
+            "borderWidth": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "overflow": "hidden",
+            "paddingHorizontal": 10,
+            "paddingVertical": 15,
+          }
+        }
+      >
+        <PropertyLabel
+          Component={[Function]}
+          ellipsizeMode="tail"
+          fontSize={14}
+          name="ABV"
+          nameStyles={
+            Array [
+              Object {
+                "fontWeight": "400",
+                "marginRight": 3,
+                "textAlign": "left",
+              },
+              Object {
+                "fontWeight": "600",
+              },
+            ]
+          }
+          numberOfLines={0}
+          separator=":"
+          style={
             Object {
               "marginVertical": 5,
-            },
-          ]
+            }
+          }
+          value="abv"
+          valueStyles={
+            Object {
+              "fontWeight": "400",
+              "marginRight": 3,
+              "textAlign": "left",
+            }
+          }
+        />
+        <PropertyLabel
+          Component={[Function]}
+          ellipsizeMode="tail"
+          fontSize={14}
+          name="Volume"
+          nameStyles={
+            Array [
+              Object {
+                "fontWeight": "400",
+                "marginRight": 3,
+                "textAlign": "left",
+              },
+              Object {
+                "fontWeight": "600",
+              },
+            ]
+          }
+          numberOfLines={0}
+          separator=":"
+          style={
+            Object {
+              "marginVertical": 5,
+            }
+          }
+          value="20 unit"
+          valueStyles={
+            Object {
+              "fontWeight": "400",
+              "marginRight": 3,
+              "textAlign": "left",
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "alignSelf": "stretch",
+            "backgroundColor": "#F2FCF7",
+            "borderColor": "#02C66A",
+            "borderRadius": 5,
+            "borderWidth": 1,
+            "justifyContent": "center",
+            "marginVertical": 20,
+            "overflow": "hidden",
+            "paddingHorizontal": 10,
+            "paddingVertical": 15,
+          }
         }
-        uppercase={false}
       >
-        description
-      </Label>
-      <PropertyLabel
-        Component={[Function]}
-        ellipsizeMode="tail"
-        fontSize={14}
-        name="ABV"
-        nameStyles={
-          Array [
+        <PropertyLabel
+          Component={[Function]}
+          ellipsizeMode="tail"
+          fontSize={14}
+          name="Food Pairing"
+          nameStyles={
+            Array [
+              Object {
+                "fontWeight": "400",
+                "marginRight": 3,
+                "textAlign": "left",
+              },
+              Object {
+                "fontWeight": "600",
+              },
+            ]
+          }
+          numberOfLines={0}
+          separator=":"
+          style={
+            Object {
+              "marginVertical": 5,
+            }
+          }
+          value="food"
+          valueStyles={
             Object {
               "fontWeight": "400",
               "marginRight": 3,
               "textAlign": "left",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-          ]
-        }
-        numberOfLines={0}
-        separator=":"
-        style={
-          Object {
-            "marginVertical": 5,
+            }
           }
-        }
-        value="abv"
-        valueStyles={
-          Object {
-            "fontWeight": "400",
-            "marginRight": 3,
-            "textAlign": "left",
-          }
-        }
-      />
-      <PropertyLabel
-        Component={[Function]}
-        ellipsizeMode="tail"
-        fontSize={14}
-        name="Volume"
-        nameStyles={
-          Array [
-            Object {
-              "fontWeight": "400",
-              "marginRight": 3,
-              "textAlign": "left",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-          ]
-        }
-        numberOfLines={0}
-        separator=":"
-        style={
-          Object {
-            "marginVertical": 5,
-          }
-        }
-        value="20 unit"
-        valueStyles={
-          Object {
-            "fontWeight": "400",
-            "marginRight": 3,
-            "textAlign": "left",
-          }
-        }
-      />
-      <PropertyLabel
-        Component={[Function]}
-        ellipsizeMode="tail"
-        fontSize={14}
-        name="Food Pairing"
-        nameStyles={
-          Array [
-            Object {
-              "fontWeight": "400",
-              "marginRight": 3,
-              "textAlign": "left",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-          ]
-        }
-        numberOfLines={0}
-        separator=":"
-        style={
-          Object {
-            "marginVertical": 5,
-          }
-        }
-        value="food"
-        valueStyles={
-          Object {
-            "fontWeight": "400",
-            "marginRight": 3,
-            "textAlign": "left",
-          }
-        }
-      />
+        />
+      </View>
     </View>
   </View>
 </View>
@@ -207,7 +258,7 @@ exports[`BeerDetailScreen test suite renders as expected without food_pairing 1`
     <View
       style={
         Object {
-          "margin": 10,
+          "marginHorizontal": 10,
         }
       }
     >
@@ -236,90 +287,124 @@ exports[`BeerDetailScreen test suite renders as expected without food_pairing 1`
       >
         tagline
       </Label>
-      <Label
-        ellipsizeMode="tail"
+      <View
         style={
-          Array [
-            Object {
-              "fontWeight": "400",
-              "marginRight": 3,
-              "textAlign": "left",
-            },
+          Object {
+            "alignSelf": "stretch",
+            "backgroundColor": "#F2FCF7",
+            "borderColor": "#02C66A",
+            "borderRadius": 5,
+            "borderWidth": 1,
+            "justifyContent": "center",
+            "marginVertical": 20,
+            "overflow": "hidden",
+            "paddingHorizontal": 10,
+            "paddingVertical": 15,
+          }
+        }
+      >
+        <Label
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "fontWeight": "400",
+                "marginRight": 3,
+                "textAlign": "left",
+              },
+              Object {
+                "marginVertical": 5,
+              },
+            ]
+          }
+          uppercase={false}
+        >
+          description
+        </Label>
+      </View>
+      <View
+        style={
+          Object {
+            "alignSelf": "stretch",
+            "backgroundColor": "#F2FCF7",
+            "borderColor": "#02C66A",
+            "borderRadius": 5,
+            "borderWidth": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "overflow": "hidden",
+            "paddingHorizontal": 10,
+            "paddingVertical": 15,
+          }
+        }
+      >
+        <PropertyLabel
+          Component={[Function]}
+          ellipsizeMode="tail"
+          fontSize={14}
+          name="ABV"
+          nameStyles={
+            Array [
+              Object {
+                "fontWeight": "400",
+                "marginRight": 3,
+                "textAlign": "left",
+              },
+              Object {
+                "fontWeight": "600",
+              },
+            ]
+          }
+          numberOfLines={0}
+          separator=":"
+          style={
             Object {
               "marginVertical": 5,
-            },
-          ]
-        }
-        uppercase={false}
-      >
-        description
-      </Label>
-      <PropertyLabel
-        Component={[Function]}
-        ellipsizeMode="tail"
-        fontSize={14}
-        name="ABV"
-        nameStyles={
-          Array [
+            }
+          }
+          value="abv"
+          valueStyles={
             Object {
               "fontWeight": "400",
               "marginRight": 3,
               "textAlign": "left",
-            },
+            }
+          }
+        />
+        <PropertyLabel
+          Component={[Function]}
+          ellipsizeMode="tail"
+          fontSize={14}
+          name="Volume"
+          nameStyles={
+            Array [
+              Object {
+                "fontWeight": "400",
+                "marginRight": 3,
+                "textAlign": "left",
+              },
+              Object {
+                "fontWeight": "600",
+              },
+            ]
+          }
+          numberOfLines={0}
+          separator=":"
+          style={
             Object {
-              "fontWeight": "600",
-            },
-          ]
-        }
-        numberOfLines={0}
-        separator=":"
-        style={
-          Object {
-            "marginVertical": 5,
+              "marginVertical": 5,
+            }
           }
-        }
-        value="abv"
-        valueStyles={
-          Object {
-            "fontWeight": "400",
-            "marginRight": 3,
-            "textAlign": "left",
-          }
-        }
-      />
-      <PropertyLabel
-        Component={[Function]}
-        ellipsizeMode="tail"
-        fontSize={14}
-        name="Volume"
-        nameStyles={
-          Array [
+          value="20 unit"
+          valueStyles={
             Object {
               "fontWeight": "400",
               "marginRight": 3,
               "textAlign": "left",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-          ]
-        }
-        numberOfLines={0}
-        separator=":"
-        style={
-          Object {
-            "marginVertical": 5,
+            }
           }
-        }
-        value="20 unit"
-        valueStyles={
-          Object {
-            "fontWeight": "400",
-            "marginRight": 3,
-            "textAlign": "left",
-          }
-        }
-      />
+        />
+      </View>
     </View>
   </View>
 </View>

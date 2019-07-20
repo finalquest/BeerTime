@@ -13,8 +13,9 @@ const styles = StyleSheet.create({
   closeContainer: {
     height: 40,
     width: 45,
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     marginTop: 10,
+    backgroundColor: 'white',
   },
 });
 
