@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 
 import PropTypes from 'prop-types';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import BackArrow from '../components/BackArrow';
 import { BeerProptype } from '../utils/PropTypes';
 import Label from '../components/Label';
@@ -62,11 +63,20 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: 'stretch',
   },
+  link: {
+    color: '#4169ff',
+    fontSize: 14,
+    marginVertical: 2,
+    textDecorationLine: 'underline',
+  },
 });
 
 const BeerDetailScreen = ({
-  onBack, beer: {
-    name, tagline, description, abv, volume: { value, unit }, food_pairing: foodPairing,
+  onBack, openBrowser,
+  beer: {
+    name, tagline,
+    description, abv,
+    volume: { value, unit }, food_pairing: foodPairing,
   },
 }) => (
   <View style={styles.container}>
@@ -102,17 +112,17 @@ const BeerDetailScreen = ({
       </View>
       {foodPairing.length > 0 ? (
         <View style={styles.descriptionContainer}>
-          <PropertyLabel
-            name="Food Pairing"
-            style={{
-              marginVertical: 5, flex: 1,
-            }}
-            numberOfLines={0}
-            nameStyles={[styles.description, { fontWeight: '600' }]}
-            valueStyles={[styles.description, { flex: 1 }]}
-            value={foodPairing.join('\n')}
-            separator=":"
-          />
+          <Label>Good with:</Label>
+          {foodPairing.map(item => (
+            <TouchableOpacity
+              onPress={() => {
+                openBrowser(item);
+              }}
+              key={item}
+            >
+              <Label style={styles.link}>{item}</Label>
+            </TouchableOpacity>
+          ))}
         </View>
       ) : undefined}
     </ScrollView>
@@ -121,6 +131,7 @@ const BeerDetailScreen = ({
 
 BeerDetailScreen.propTypes = {
   onBack: PropTypes.func.isRequired,
+  openBrowser: PropTypes.func.isRequired,
   beer: BeerProptype.isRequired,
 };
 

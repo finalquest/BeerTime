@@ -8,5 +8,6 @@ exports[`BeerList test suite renders as expected 1`] = `
     }
   }
   onBack={[Function]}
+  openBrowser={[Function]}
 />
 `;

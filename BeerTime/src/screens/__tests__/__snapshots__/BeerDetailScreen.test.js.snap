@@ -192,47 +192,39 @@ exports[`BeerDetailScreen test suite renders as expected 1`] = `
         }
       }
     >
-      <PropertyLabel
-        Component={[Function]}
+      <Label
         ellipsizeMode="tail"
-        fontSize={14}
-        name="Food Pairing"
-        nameStyles={
-          Array [
-            Object {
-              "alignSelf": "stretch",
-              "fontWeight": "400",
-              "marginRight": 3,
-              "textAlign": "left",
-            },
-            Object {
-              "fontWeight": "600",
-            },
-          ]
-        }
-        numberOfLines={0}
-        separator=":"
-        style={
+        style={Object {}}
+        uppercase={false}
+      >
+        Good with:
+      </Label>
+      <TouchableOpacity
+        activeOpacity={0.2}
+        delayLongPress={600}
+        extraButtonProps={
           Object {
-            "flex": 1,
-            "marginVertical": 5,
+            "rippleColor": "transparent",
           }
         }
-        value="food"
-        valueStyles={
-          Array [
+        key="food"
+        onPress={[Function]}
+      >
+        <Label
+          ellipsizeMode="tail"
+          style={
             Object {
-              "alignSelf": "stretch",
-              "fontWeight": "400",
-              "marginRight": 3,
-              "textAlign": "left",
-            },
-            Object {
-              "flex": 1,
-            },
-          ]
-        }
-      />
+              "color": "#4169ff",
+              "fontSize": 14,
+              "marginVertical": 2,
+              "textDecorationLine": "underline",
+            }
+          }
+          uppercase={false}
+        >
+          food
+        </Label>
+      </TouchableOpacity>
     </View>
   </ScrollViewMock>
 </View>
