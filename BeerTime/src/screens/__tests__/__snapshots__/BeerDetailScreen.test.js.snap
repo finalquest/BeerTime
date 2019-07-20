@@ -5,7 +5,7 @@ exports[`BeerDetailScreen test suite renders as expected 1`] = `
   style={
     Object {
       "alignSelf": "stretch",
-      "backgroundColor": "gray",
+      "backgroundColor": "white",
       "flex": 1,
     }
   }
@@ -25,13 +25,302 @@ exports[`BeerDetailScreen test suite renders as expected 1`] = `
         }
       }
     />
-    <Label
-      ellipsizeMode="tail"
-      style={Object {}}
-      uppercase={false}
+    <View
+      style={
+        Object {
+          "margin": 10,
+        }
+      }
     >
-      name
-    </Label>
+      <Label
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "black",
+            "fontSize": 24,
+            "fontWeight": "500",
+          }
+        }
+        uppercase={false}
+      >
+        name
+      </Label>
+      <Label
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "gray",
+            "fontSize": 14,
+          }
+        }
+        uppercase={false}
+      >
+        tagline
+      </Label>
+      <Label
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "fontWeight": "400",
+              "marginRight": 3,
+              "textAlign": "left",
+            },
+            Object {
+              "marginVertical": 5,
+            },
+          ]
+        }
+        uppercase={false}
+      >
+        description
+      </Label>
+      <PropertyLabel
+        Component={[Function]}
+        ellipsizeMode="tail"
+        fontSize={14}
+        name="ABV"
+        nameStyles={
+          Array [
+            Object {
+              "fontWeight": "400",
+              "marginRight": 3,
+              "textAlign": "left",
+            },
+            Object {
+              "fontWeight": "600",
+            },
+          ]
+        }
+        numberOfLines={0}
+        separator=":"
+        style={
+          Object {
+            "marginVertical": 5,
+          }
+        }
+        value="abv"
+        valueStyles={
+          Object {
+            "fontWeight": "400",
+            "marginRight": 3,
+            "textAlign": "left",
+          }
+        }
+      />
+      <PropertyLabel
+        Component={[Function]}
+        ellipsizeMode="tail"
+        fontSize={14}
+        name="Volume"
+        nameStyles={
+          Array [
+            Object {
+              "fontWeight": "400",
+              "marginRight": 3,
+              "textAlign": "left",
+            },
+            Object {
+              "fontWeight": "600",
+            },
+          ]
+        }
+        numberOfLines={0}
+        separator=":"
+        style={
+          Object {
+            "marginVertical": 5,
+          }
+        }
+        value="20 unit"
+        valueStyles={
+          Object {
+            "fontWeight": "400",
+            "marginRight": 3,
+            "textAlign": "left",
+          }
+        }
+      />
+      <PropertyLabel
+        Component={[Function]}
+        ellipsizeMode="tail"
+        fontSize={14}
+        name="Food Pairing"
+        nameStyles={
+          Array [
+            Object {
+              "fontWeight": "400",
+              "marginRight": 3,
+              "textAlign": "left",
+            },
+            Object {
+              "fontWeight": "600",
+            },
+          ]
+        }
+        numberOfLines={0}
+        separator=":"
+        style={
+          Object {
+            "marginVertical": 5,
+          }
+        }
+        value="food"
+        valueStyles={
+          Object {
+            "fontWeight": "400",
+            "marginRight": 3,
+            "textAlign": "left",
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`BeerDetailScreen test suite renders as expected without food_pairing 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "backgroundColor": "white",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignSelf": "stretch",
+      }
+    }
+  >
+    <BackArrow
+      styleImage={
+        Object {
+          "alignSelf": "center",
+          "tintColor": "black",
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "margin": 10,
+        }
+      }
+    >
+      <Label
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "black",
+            "fontSize": 24,
+            "fontWeight": "500",
+          }
+        }
+        uppercase={false}
+      >
+        name
+      </Label>
+      <Label
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "gray",
+            "fontSize": 14,
+          }
+        }
+        uppercase={false}
+      >
+        tagline
+      </Label>
+      <Label
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "fontWeight": "400",
+              "marginRight": 3,
+              "textAlign": "left",
+            },
+            Object {
+              "marginVertical": 5,
+            },
+          ]
+        }
+        uppercase={false}
+      >
+        description
+      </Label>
+      <PropertyLabel
+        Component={[Function]}
+        ellipsizeMode="tail"
+        fontSize={14}
+        name="ABV"
+        nameStyles={
+          Array [
+            Object {
+              "fontWeight": "400",
+              "marginRight": 3,
+              "textAlign": "left",
+            },
+            Object {
+              "fontWeight": "600",
+            },
+          ]
+        }
+        numberOfLines={0}
+        separator=":"
+        style={
+          Object {
+            "marginVertical": 5,
+          }
+        }
+        value="abv"
+        valueStyles={
+          Object {
+            "fontWeight": "400",
+            "marginRight": 3,
+            "textAlign": "left",
+          }
+        }
+      />
+      <PropertyLabel
+        Component={[Function]}
+        ellipsizeMode="tail"
+        fontSize={14}
+        name="Volume"
+        nameStyles={
+          Array [
+            Object {
+              "fontWeight": "400",
+              "marginRight": 3,
+              "textAlign": "left",
+            },
+            Object {
+              "fontWeight": "600",
+            },
+          ]
+        }
+        numberOfLines={0}
+        separator=":"
+        style={
+          Object {
+            "marginVertical": 5,
+          }
+        }
+        value="20 unit"
+        valueStyles={
+          Object {
+            "fontWeight": "400",
+            "marginRight": 3,
+            "textAlign": "left",
+          }
+        }
+      />
+    </View>
   </View>
 </View>
 `;

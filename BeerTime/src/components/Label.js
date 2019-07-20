@@ -37,6 +37,7 @@ Label.propTypes = {
   style: Text.propTypes.style,
   children: PropTypes.oneOfType([
     PropTypes.string,
+    PropTypes.number,
   ]).isRequired,
   uppercase: PropTypes.bool,
   numberOfLines: PropTypes.number,
