@@ -13,7 +13,7 @@ import ModalScreen from './ModalScreen';
 import FilterInput from '../components/FilterInput';
 
 const styles = StyleSheet.create({
-  container: { flex: 1, alignSelf: 'stretch', backgroundColor: 'gray' },
+  container: { flex: 1, alignSelf: 'stretch', backgroundColor: 'white' },
 });
 
 const BeerListScreen = ({

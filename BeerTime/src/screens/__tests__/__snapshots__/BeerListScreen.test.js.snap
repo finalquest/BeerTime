@@ -5,7 +5,7 @@ exports[`BeerListScreen test suite renders as expected 1`] = `
   style={
     Object {
       "alignSelf": "stretch",
-      "backgroundColor": "gray",
+      "backgroundColor": "white",
       "flex": 1,
     }
   }
@@ -31,7 +31,7 @@ exports[`BeerListScreen test suite renders as expected 1`] = `
     style={
       Object {
         "alignSelf": "stretch",
-        "backgroundColor": "gray",
+        "backgroundColor": "white",
         "flex": 1,
       }
     }
@@ -54,7 +54,7 @@ exports[`BeerListScreen test suite renders as expected with data 1`] = `
   style={
     Object {
       "alignSelf": "stretch",
-      "backgroundColor": "gray",
+      "backgroundColor": "white",
       "flex": 1,
     }
   }
@@ -89,7 +89,7 @@ exports[`BeerListScreen test suite renders as expected with data 1`] = `
     style={
       Object {
         "alignSelf": "stretch",
-        "backgroundColor": "gray",
+        "backgroundColor": "white",
         "flex": 1,
       }
     }

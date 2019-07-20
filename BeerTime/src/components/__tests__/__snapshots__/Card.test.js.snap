@@ -6,12 +6,13 @@ exports[`Card test suite renders as expected 1`] = `
   style={
     Object {
       "backgroundColor": "white",
-      "borderColor": "gray",
+      "borderColor": "lightgray",
       "borderRadius": 4,
       "borderWidth": 1,
       "flexDirection": "row",
-      "height": 150,
-      "margin": 20,
+      "height": 120,
+      "marginHorizontal": 15,
+      "marginVertical": 10,
       "padding": 10,
     }
   }
@@ -41,10 +42,10 @@ exports[`Card test suite renders as expected 1`] = `
   <View
     style={
       Object {
-        "alignItems": "center",
+        "alignItems": "flex-start",
         "flex": 1,
-        "justifyContent": "center",
-        "marginHorizontal": 5,
+        "justifyContent": "flex-start",
+        "marginHorizontal": 15,
       }
     }
   >
@@ -53,8 +54,8 @@ exports[`Card test suite renders as expected 1`] = `
       numberOfLines={2}
       style={
         Object {
-          "fontSize": 25,
-          "textAlign": "center",
+          "fontSize": 20,
+          "textAlign": "left",
         }
       }
       uppercase={false}

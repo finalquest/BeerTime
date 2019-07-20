@@ -16,12 +16,13 @@ import PropertyLabel from './PropertyLabel';
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    height: 150,
+    height: 120,
     backgroundColor: 'white',
-    margin: 20,
+    marginHorizontal: 15,
+    marginVertical: 10,
     padding: 10,
     borderRadius: 4,
-    borderColor: 'gray',
+    borderColor: 'lightgray',
     borderWidth: 1,
   },
   imageContainer: {
@@ -34,12 +35,12 @@ const styles = StyleSheet.create({
   },
   bodyContainer: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginHorizontal: 5,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    marginHorizontal: 15,
   },
   name: {
-    fontSize: 25, textAlign: 'center',
+    fontSize: 20, textAlign: 'left',
   },
 });
 
