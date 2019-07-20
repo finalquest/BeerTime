@@ -1,8 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
-import mockAsyncStorage from '@react-native-community/async-storage/jest/async-storage-mock';
-
 
 import BeerList from '../BeerList';
 
@@ -13,9 +11,6 @@ const initialState = {
   },
   fetching: {},
 };
-
-jest.mock('@react-native-community/async-storage', () => mockAsyncStorage);
-
 
 describe('BeerList test suite', () => {
   it('renders as expected', () => {
