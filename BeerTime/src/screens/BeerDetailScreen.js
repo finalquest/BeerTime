@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     textAlign: 'left',
     marginRight: 3,
+    alignSelf: 'stretch',
   },
   descriptionContainer: {
     alignSelf: 'stretch',
@@ -103,10 +104,12 @@ const BeerDetailScreen = ({
         <View style={styles.descriptionContainer}>
           <PropertyLabel
             name="Food Pairing"
-            style={{ marginVertical: 5 }}
+            style={{
+              marginVertical: 5, flex: 1,
+            }}
             numberOfLines={0}
             nameStyles={[styles.description, { fontWeight: '600' }]}
-            valueStyles={styles.description}
+            valueStyles={[styles.description, { flex: 1 }]}
             value={foodPairing.join('\n')}
             separator=":"
           />

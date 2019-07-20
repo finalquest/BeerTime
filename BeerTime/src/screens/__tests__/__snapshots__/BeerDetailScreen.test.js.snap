@@ -74,6 +74,7 @@ exports[`BeerDetailScreen test suite renders as expected 1`] = `
         style={
           Array [
             Object {
+              "alignSelf": "stretch",
               "fontWeight": "400",
               "marginRight": 3,
               "textAlign": "left",
@@ -112,6 +113,7 @@ exports[`BeerDetailScreen test suite renders as expected 1`] = `
         nameStyles={
           Array [
             Object {
+              "alignSelf": "stretch",
               "fontWeight": "400",
               "marginRight": 3,
               "textAlign": "left",
@@ -131,6 +133,7 @@ exports[`BeerDetailScreen test suite renders as expected 1`] = `
         value="abv"
         valueStyles={
           Object {
+            "alignSelf": "stretch",
             "fontWeight": "400",
             "marginRight": 3,
             "textAlign": "left",
@@ -145,6 +148,7 @@ exports[`BeerDetailScreen test suite renders as expected 1`] = `
         nameStyles={
           Array [
             Object {
+              "alignSelf": "stretch",
               "fontWeight": "400",
               "marginRight": 3,
               "textAlign": "left",
@@ -164,6 +168,7 @@ exports[`BeerDetailScreen test suite renders as expected 1`] = `
         value="20 unit"
         valueStyles={
           Object {
+            "alignSelf": "stretch",
             "fontWeight": "400",
             "marginRight": 3,
             "textAlign": "left",
@@ -195,6 +200,7 @@ exports[`BeerDetailScreen test suite renders as expected 1`] = `
         nameStyles={
           Array [
             Object {
+              "alignSelf": "stretch",
               "fontWeight": "400",
               "marginRight": 3,
               "textAlign": "left",
@@ -208,16 +214,23 @@ exports[`BeerDetailScreen test suite renders as expected 1`] = `
         separator=":"
         style={
           Object {
+            "flex": 1,
             "marginVertical": 5,
           }
         }
         value="food"
         valueStyles={
-          Object {
-            "fontWeight": "400",
-            "marginRight": 3,
-            "textAlign": "left",
-          }
+          Array [
+            Object {
+              "alignSelf": "stretch",
+              "fontWeight": "400",
+              "marginRight": 3,
+              "textAlign": "left",
+            },
+            Object {
+              "flex": 1,
+            },
+          ]
         }
       />
     </View>
@@ -299,6 +312,7 @@ exports[`BeerDetailScreen test suite renders as expected without food_pairing 1`
         style={
           Array [
             Object {
+              "alignSelf": "stretch",
               "fontWeight": "400",
               "marginRight": 3,
               "textAlign": "left",
@@ -337,6 +351,7 @@ exports[`BeerDetailScreen test suite renders as expected without food_pairing 1`
         nameStyles={
           Array [
             Object {
+              "alignSelf": "stretch",
               "fontWeight": "400",
               "marginRight": 3,
               "textAlign": "left",
@@ -356,6 +371,7 @@ exports[`BeerDetailScreen test suite renders as expected without food_pairing 1`
         value="abv"
         valueStyles={
           Object {
+            "alignSelf": "stretch",
             "fontWeight": "400",
             "marginRight": 3,
             "textAlign": "left",
@@ -370,6 +386,7 @@ exports[`BeerDetailScreen test suite renders as expected without food_pairing 1`
         nameStyles={
           Array [
             Object {
+              "alignSelf": "stretch",
               "fontWeight": "400",
               "marginRight": 3,
               "textAlign": "left",
@@ -389,6 +406,7 @@ exports[`BeerDetailScreen test suite renders as expected without food_pairing 1`
         value="20 unit"
         valueStyles={
           Object {
+            "alignSelf": "stretch",
             "fontWeight": "400",
             "marginRight": 3,
             "textAlign": "left",
