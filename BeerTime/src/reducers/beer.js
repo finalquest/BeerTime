@@ -46,7 +46,13 @@ const beer = (state = initialState, action) => {
       const { favoritesIds = [] } = state;
       const endReached = result.length === 0;
       return {
-        beers: updatedBeers(result, favoritesIds), page, name, endReached, fromBrewDate, toBrewDate,
+        ...state,
+        beers: updatedBeers(result, favoritesIds),
+        page,
+        name,
+        endReached,
+        fromBrewDate,
+        toBrewDate,
       };
     }
     case UPDATE_IDS: {
