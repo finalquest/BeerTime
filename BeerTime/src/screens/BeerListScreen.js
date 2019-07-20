@@ -62,8 +62,8 @@ const BeerListScreen = ({
           onFilterCancel={() => {
             setShowModal(false);
           }}
-          onFilterSelected={({ name: beerName, fromBrewDate: fbd, toBrewDate: tbd }) => {
-            applyFilter({ name: beerName, fromBrewDate: fbd, toBrewDate: tbd });
+          onFilterSelected={(filter) => {
+            applyFilter(filter);
             setShowModal(false);
           }}
         />

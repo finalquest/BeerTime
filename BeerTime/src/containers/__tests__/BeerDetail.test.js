@@ -28,4 +28,14 @@ describe('BeerList test suite', () => {
     );
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should dispatch back', () => {
+    const store = mockStore(initialState);
+    const wrapper = shallow(
+      <BeerDetail navigation={navigation} />,
+      { context: { store } },
+    );
+    wrapper.find('BeerDetailScreen').prop('onBack')();
+    expect(store.getActions()).toEqual([{ type: 'Navigation/BACK', key: null, immediate: undefined }]);
+  });
 });

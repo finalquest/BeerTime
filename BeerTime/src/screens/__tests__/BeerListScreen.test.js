@@ -54,4 +54,24 @@ describe('BeerListScreen test suite', () => {
     wrapper.find('FilterHeader').prop('onFilterPressed')();
     expect(setState).toBeCalledWith(true);
   });
+
+  it('should update state when filter cancel', () => {
+    const wrapper = shallow(<Screen />);
+    wrapper.find('FilterInput').prop('onFilterCancel')();
+    expect(setState).toBeCalledWith(false);
+  });
+
+  it('should call applyFIlter and hide modal', () => {
+    const apply = jest.fn();
+    const wrapper = shallow(<Screen applyFilter={apply} />);
+    wrapper.find('FilterInput').prop('onFilterSelected')({ name: 'name' });
+    expect(apply).toBeCalledWith({ name: 'name' });
+    expect(setState).toBeCalledWith(false);
+  });
+
+  it('key extractor should return id of item', () => {
+    const apply = jest.fn();
+    const wrapper = shallow(<Screen applyFilter={apply} />);
+    expect(wrapper.find('FlatList').prop('keyExtractor')({ id: 1 })).toEqual('1');
+  });
 });

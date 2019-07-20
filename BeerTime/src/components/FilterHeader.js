@@ -34,7 +34,7 @@ const FilterHeader = ({ amount, onFilterPressed }) => (
     <PropertyLabel
       name="Total beers"
       style={{ flex: 1, alignItems: 'center' }}
-      nameStyles={{ fontWeight: '600' }}
+      nameStyles={{ fontWeight: '600', marginLeft: 10 }}
       value={amount.toString()}
       separator=":"
     />

@@ -20,6 +20,7 @@ exports[`FilterHeader test suite renders as expected 1`] = `
     nameStyles={
       Object {
         "fontWeight": "600",
+        "marginLeft": 10,
       }
     }
     numberOfLines={1}

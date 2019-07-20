@@ -43,8 +43,6 @@ const getErrorMessage = ({ responseError }) => {
 const getErrorCause = ({ responseError = {} }) => responseError.cause || 'unknown_error';
 
 const handleNetworkError = (options = {}, error = {}) => {
-  //     GLOBAL.tracking.error("unmanaged_req_error " + error.message, error);
-  // const { operationError, operationErrorMessage, onOk } = options;
   const { operationError, operationErrorMessage } = options;
   if ((!error.stack || error.response) && error.responseError) {
     const errorMessage = getErrorMessage(error);
@@ -127,15 +125,9 @@ const call = (url, method = 'GET', options = {}, body, credentials = 'include') 
     .catch(handleNetworkError.bind(this, options));
 };
 
-const fullPath = (url, options = {}) => {
-  const { resourcePrefix } = options;
-  const prefix = resourcePrefix || '';
-  return `${url}${prefix}`;
-};
-
 const apiCall = (url, data = undefined, options = {}) => {
   const { type } = options;
-  const path = fullPath(url, options);
+  const path = url;
   const method = verb(type);
   return call(path, method, options, data);
 };

@@ -67,4 +67,76 @@ describe('BeerList test suite', () => {
       }],
     );
   });
+
+  it('should dispacth getBeer action when endreached', () => {
+    const store = mockStore({ ...initialState });
+    const wrapper = shallow(
+      <BeerList />,
+      { context: { store } },
+    );
+    wrapper.find('BeerListScreen').prop('onEndReached')(1, { name: 'name' });
+    expect(store.getActions()).toEqual(
+      [{
+        type: 'GET_BEERS',
+        request: {
+          url: 'https://api.punkapi.com/v2/beers',
+          data: {
+            beer_name: 'name',
+            page: 2,
+            per_page: 10,
+          },
+        },
+        value: {
+          page: 2,
+          name: 'name',
+          toBrewDate: undefined,
+          fromBrewDate: undefined,
+        },
+      }],
+    );
+  });
+
+  it('should dispacth getBeer action when applyFilter', () => {
+    const store = mockStore({ ...initialState });
+    const wrapper = shallow(
+      <BeerList />,
+      { context: { store } },
+    );
+    wrapper.find('BeerListScreen').prop('applyFilter')({ name: 'name' });
+    expect(store.getActions()).toEqual(
+      [{
+        type: 'GET_BEERS_FILTER',
+        request: {
+          url: 'https://api.punkapi.com/v2/beers',
+          data: {
+            beer_name: 'name',
+            page: 1,
+            per_page: 10,
+          },
+        },
+        value: {
+          page: 1,
+          name: 'name',
+          toBrewDate: undefined,
+          fromBrewDate: undefined,
+        },
+      }],
+    );
+  });
+
+  it('should dispacth getBeer action when item selected', () => {
+    const store = mockStore({ ...initialState });
+    const wrapper = shallow(
+      <BeerList />,
+      { context: { store } },
+    );
+    wrapper.find('BeerListScreen').prop('onItemSelected')({ name: 'name', tagline: 'tagline' });
+    expect(store.getActions()).toEqual(
+      [{
+        type: 'Navigation/NAVIGATE',
+        routeName: 'BEER_DETAIL',
+        params: { beer: { name: 'name', tagline: 'tagline' } },
+      }],
+    );
+  });
 });

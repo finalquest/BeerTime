@@ -64,15 +64,19 @@ describe('beer reducer test suite', () => {
     expect(nextState).toEqual(state);
   });
 
-  test('should mantain name if exist', () => {
+  test('should mantain filters if exist', () => {
     const state = {
       beers: [{ data: 'key2' }, { data: 'key1' }],
       page: 2,
       endReached: false,
       name: 'name',
+      toBrewDate: 'to',
+      fromBrewDate: 'from',
     };
     const nextState = reducer(
-      { beers: [{ data: 'key2' }], page: 1, name: 'name' },
+      {
+        beers: [{ data: 'key2' }], page: 1, name: 'name', toBrewDate: 'to', fromBrewDate: 'from',
+      },
       {
         type: GET_BEERS,
         value: {
@@ -85,7 +89,7 @@ describe('beer reducer test suite', () => {
     expect(nextState).toEqual(state);
   });
 
-  test('should reset name if is first page', () => {
+  test('should reset filters if is first page', () => {
     const state = {
       beers: [{ data: 'key1' }],
       page: 1,
@@ -95,7 +99,9 @@ describe('beer reducer test suite', () => {
       toBrewDate: '',
     };
     const nextState = reducer(
-      { beers: [{ data: 'key2' }], page: 2, name: 'name' },
+      {
+        beers: [{ data: 'key2' }], page: 2, name: 'name', fromBrewDate: 'from', toBrewDate: 'to',
+      },
       {
         type: GET_BEERS,
         value: {
@@ -123,6 +129,29 @@ describe('beer reducer test suite', () => {
           result: [{ data: 'key1' }],
           page: 1,
           name: 'name',
+        },
+      },
+    );
+
+    expect(nextState).toEqual(state);
+  });
+
+  test('should set endReached if no result', () => {
+    const state = {
+      beers: [{ data: 'key1' }],
+      page: 2,
+      endReached: true,
+      name: undefined,
+      fromBrewDate: undefined,
+      toBrewDate: undefined,
+    };
+    const nextState = reducer(
+      { beers: [{ data: 'key1' }], page: 1, endReached: false },
+      {
+        type: GET_BEERS,
+        value: {
+          result: [],
+          page: 2,
         },
       },
     );
