@@ -2,6 +2,6 @@
 
 exports[`BeerList test suite renders as expected 1`] = `
 <BeerDetailScreen
-  dispatch={[Function]}
+  onBack={[Function]}
 />
 `;

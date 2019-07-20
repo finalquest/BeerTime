@@ -54,6 +54,7 @@
       "^[@./a-zA-Z0-9$_-]+\\.(png|gif)$": "RelativeImageStub"
     },
     "preset": "react-native",
+    "setupFiles": ["./node_modules/react-native-gesture-handler/jestSetup.js"],
     "setupTestFrameworkScriptFile": "./test.config.js",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"

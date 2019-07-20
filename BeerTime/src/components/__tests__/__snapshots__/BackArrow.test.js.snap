@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackArrow test suite renders as expected 1`] = `
+<TouchableOpacity
+  style={
+    Object {
+      "height": 40,
+      "justifyContent": "flex-start",
+      "marginTop": 10,
+      "width": 45,
+    }
+  }
+>
+  <Image
+    source={1}
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "tintColor": "black",
+        },
+        Object {
+          "alignSelf": "center",
+          "tintColor": "black",
+        },
+      ]
+    }
+  />
+</TouchableOpacity>
+`;

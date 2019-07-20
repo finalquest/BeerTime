@@ -9,5 +9,22 @@ exports[`BeerDetailScreen test suite renders as expected 1`] = `
       "flex": 1,
     }
   }
-/>
+>
+  <View
+    style={
+      Object {
+        "alignSelf": "stretch",
+      }
+    }
+  >
+    <BackArrow
+      styleImage={
+        Object {
+          "alignSelf": "center",
+          "tintColor": "black",
+        }
+      }
+    />
+  </View>
+</View>
 `;
