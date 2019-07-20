@@ -24,6 +24,7 @@ describe('beer reducer test suite', () => {
       name: undefined,
       fromBrewDate: '',
       toBrewDate: '',
+      favoritesIds: [],
     };
     const nextState = reducer(
       undefined,
@@ -47,6 +48,8 @@ describe('beer reducer test suite', () => {
       name: undefined,
       fromBrewDate: '',
       toBrewDate: '',
+      favoritesIds: [],
+
     };
     const nextState = reducer(
       {
@@ -72,6 +75,7 @@ describe('beer reducer test suite', () => {
       name: 'name',
       toBrewDate: 'to',
       fromBrewDate: 'from',
+      favoritesIds: [],
     };
     const nextState = reducer(
       {
@@ -97,6 +101,8 @@ describe('beer reducer test suite', () => {
       name: undefined,
       fromBrewDate: '',
       toBrewDate: '',
+      favoritesIds: [],
+
     };
     const nextState = reducer(
       {
@@ -144,6 +150,7 @@ describe('beer reducer test suite', () => {
       name: undefined,
       fromBrewDate: undefined,
       toBrewDate: undefined,
+      favoritesIds: [],
     };
     const nextState = reducer(
       { beers: [{ data: 'key1' }], page: 1, endReached: false },

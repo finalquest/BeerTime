@@ -4,7 +4,7 @@ import getBeers from '../model/actions/getBeers';
 import { GET_BEERS } from '../model/const/actionNames';
 import { navigateTo } from '../model/actions/navigation';
 import { BEER_DETAIL } from '../model/const/routeNames';
-import updateBeerStorage from '../utils/updateBeerStorage';
+import { updateBeerStorage, getBeersFromStorage } from '../utils/updateBeerStorage';
 
 const mapStateToProps = ({
   beer: {
@@ -21,7 +21,10 @@ const mapStateToProps = ({
   };
 };
 const mapDispatchToProps = dispatch => ({
-  onMounted: (page = 0) => dispatch(getBeers(page + 1)),
+  onMounted: (page = 0) => {
+    getBeersFromStorage(dispatch);
+    return dispatch(getBeers(page + 1));
+  },
   onEndReached: (page, filters) => dispatch(getBeers(page + 1, filters, true)),
   applyFilter: filters => dispatch(getBeers(1, filters)),
   onItemSelected: beer => dispatch(navigateTo(BEER_DETAIL, { beer })),

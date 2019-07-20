@@ -3,7 +3,7 @@ import { UPDATE_IDS } from '../model/const/actionNames';
 
 const updateIdAction = id => ({ type: UPDATE_IDS, value: id });
 
-const updateBeerStorage = (id, dispatch) => AsyncStorage.getItem('beers').then((beer) => {
+export const updateBeerStorage = (id, dispatch) => AsyncStorage.getItem('beers').then((beer) => {
   const storedBeersId = beer ? JSON.parse(beer) : [];
   const index = storedBeersId.indexOf(id);
   let updatedId;
@@ -17,4 +17,5 @@ const updateBeerStorage = (id, dispatch) => AsyncStorage.getItem('beers').then((
   return dispatch(updateIdAction(updatedId));
 });
 
-export default updateBeerStorage;
+export const getBeersFromStorage = dispatch => AsyncStorage.getItem('beers')
+  .then((ids = []) => dispatch(updateIdAction(ids)));

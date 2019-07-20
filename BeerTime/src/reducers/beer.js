@@ -35,6 +35,7 @@ const beer = (state = initialState, action) => {
         fromBrewDate,
         toBrewDate,
         endReached,
+        favoritesIds,
       };
     }
     case GET_BEERS_FILTER: {
