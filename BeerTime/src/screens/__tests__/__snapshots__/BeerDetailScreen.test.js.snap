@@ -10,223 +10,218 @@ exports[`BeerDetailScreen test suite renders as expected 1`] = `
     }
   }
 >
-  <View
+  <BackArrow
+    styleImage={
+      Object {
+        "alignSelf": "center",
+        "tintColor": "black",
+      }
+    }
+  />
+  <ScrollViewMock
+    showsVerticalScrollIndicator={false}
     style={
       Object {
         "alignSelf": "stretch",
+        "flex": 1,
+        "marginHorizontal": 10,
       }
     }
   >
-    <BackArrow
-      styleImage={
+    <Label
+      ellipsizeMode="tail"
+      style={
         Object {
-          "alignSelf": "center",
-          "tintColor": "black",
+          "color": "black",
+          "fontSize": 24,
+          "fontWeight": "500",
         }
       }
-    />
+      uppercase={false}
+    >
+      name
+    </Label>
+    <Label
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "gray",
+          "fontSize": 14,
+        }
+      }
+      uppercase={false}
+    >
+      tagline
+    </Label>
     <View
       style={
         Object {
-          "marginHorizontal": 10,
+          "alignSelf": "stretch",
+          "backgroundColor": "#F2FCF7",
+          "borderColor": "#02C66A",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "justifyContent": "center",
+          "marginVertical": 20,
+          "overflow": "hidden",
+          "paddingHorizontal": 10,
+          "paddingVertical": 15,
         }
       }
     >
       <Label
         ellipsizeMode="tail"
         style={
-          Object {
-            "color": "black",
-            "fontSize": 24,
-            "fontWeight": "500",
-          }
+          Array [
+            Object {
+              "fontWeight": "400",
+              "marginRight": 3,
+              "textAlign": "left",
+            },
+            Object {
+              "marginVertical": 5,
+            },
+          ]
         }
         uppercase={false}
       >
-        name
+        description
       </Label>
-      <Label
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "gray",
-            "fontSize": 14,
-          }
-        }
-        uppercase={false}
-      >
-        tagline
-      </Label>
-      <View
-        style={
-          Object {
-            "alignSelf": "stretch",
-            "backgroundColor": "#F2FCF7",
-            "borderColor": "#02C66A",
-            "borderRadius": 5,
-            "borderWidth": 1,
-            "justifyContent": "center",
-            "marginVertical": 20,
-            "overflow": "hidden",
-            "paddingHorizontal": 10,
-            "paddingVertical": 15,
-          }
-        }
-      >
-        <Label
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "fontWeight": "400",
-                "marginRight": 3,
-                "textAlign": "left",
-              },
-              Object {
-                "marginVertical": 5,
-              },
-            ]
-          }
-          uppercase={false}
-        >
-          description
-        </Label>
-      </View>
-      <View
-        style={
-          Object {
-            "alignSelf": "stretch",
-            "backgroundColor": "#F2FCF7",
-            "borderColor": "#02C66A",
-            "borderRadius": 5,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "overflow": "hidden",
-            "paddingHorizontal": 10,
-            "paddingVertical": 15,
-          }
-        }
-      >
-        <PropertyLabel
-          Component={[Function]}
-          ellipsizeMode="tail"
-          fontSize={14}
-          name="ABV"
-          nameStyles={
-            Array [
-              Object {
-                "fontWeight": "400",
-                "marginRight": 3,
-                "textAlign": "left",
-              },
-              Object {
-                "fontWeight": "600",
-              },
-            ]
-          }
-          numberOfLines={0}
-          separator=":"
-          style={
-            Object {
-              "marginVertical": 5,
-            }
-          }
-          value="abv"
-          valueStyles={
-            Object {
-              "fontWeight": "400",
-              "marginRight": 3,
-              "textAlign": "left",
-            }
-          }
-        />
-        <PropertyLabel
-          Component={[Function]}
-          ellipsizeMode="tail"
-          fontSize={14}
-          name="Volume"
-          nameStyles={
-            Array [
-              Object {
-                "fontWeight": "400",
-                "marginRight": 3,
-                "textAlign": "left",
-              },
-              Object {
-                "fontWeight": "600",
-              },
-            ]
-          }
-          numberOfLines={0}
-          separator=":"
-          style={
-            Object {
-              "marginVertical": 5,
-            }
-          }
-          value="20 unit"
-          valueStyles={
-            Object {
-              "fontWeight": "400",
-              "marginRight": 3,
-              "textAlign": "left",
-            }
-          }
-        />
-      </View>
-      <View
-        style={
-          Object {
-            "alignSelf": "stretch",
-            "backgroundColor": "#F2FCF7",
-            "borderColor": "#02C66A",
-            "borderRadius": 5,
-            "borderWidth": 1,
-            "justifyContent": "center",
-            "marginVertical": 20,
-            "overflow": "hidden",
-            "paddingHorizontal": 10,
-            "paddingVertical": 15,
-          }
-        }
-      >
-        <PropertyLabel
-          Component={[Function]}
-          ellipsizeMode="tail"
-          fontSize={14}
-          name="Food Pairing"
-          nameStyles={
-            Array [
-              Object {
-                "fontWeight": "400",
-                "marginRight": 3,
-                "textAlign": "left",
-              },
-              Object {
-                "fontWeight": "600",
-              },
-            ]
-          }
-          numberOfLines={0}
-          separator=":"
-          style={
-            Object {
-              "marginVertical": 5,
-            }
-          }
-          value="food"
-          valueStyles={
-            Object {
-              "fontWeight": "400",
-              "marginRight": 3,
-              "textAlign": "left",
-            }
-          }
-        />
-      </View>
     </View>
-  </View>
+    <View
+      style={
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#F2FCF7",
+          "borderColor": "#02C66A",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "overflow": "hidden",
+          "paddingHorizontal": 10,
+          "paddingVertical": 15,
+        }
+      }
+    >
+      <PropertyLabel
+        Component={[Function]}
+        ellipsizeMode="tail"
+        fontSize={14}
+        name="ABV"
+        nameStyles={
+          Array [
+            Object {
+              "fontWeight": "400",
+              "marginRight": 3,
+              "textAlign": "left",
+            },
+            Object {
+              "fontWeight": "600",
+            },
+          ]
+        }
+        numberOfLines={0}
+        separator=":"
+        style={
+          Object {
+            "marginVertical": 5,
+          }
+        }
+        value="abv"
+        valueStyles={
+          Object {
+            "fontWeight": "400",
+            "marginRight": 3,
+            "textAlign": "left",
+          }
+        }
+      />
+      <PropertyLabel
+        Component={[Function]}
+        ellipsizeMode="tail"
+        fontSize={14}
+        name="Volume"
+        nameStyles={
+          Array [
+            Object {
+              "fontWeight": "400",
+              "marginRight": 3,
+              "textAlign": "left",
+            },
+            Object {
+              "fontWeight": "600",
+            },
+          ]
+        }
+        numberOfLines={0}
+        separator=":"
+        style={
+          Object {
+            "marginVertical": 5,
+          }
+        }
+        value="20 unit"
+        valueStyles={
+          Object {
+            "fontWeight": "400",
+            "marginRight": 3,
+            "textAlign": "left",
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#F2FCF7",
+          "borderColor": "#02C66A",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "justifyContent": "center",
+          "marginVertical": 20,
+          "overflow": "hidden",
+          "paddingHorizontal": 10,
+          "paddingVertical": 15,
+        }
+      }
+    >
+      <PropertyLabel
+        Component={[Function]}
+        ellipsizeMode="tail"
+        fontSize={14}
+        name="Food Pairing"
+        nameStyles={
+          Array [
+            Object {
+              "fontWeight": "400",
+              "marginRight": 3,
+              "textAlign": "left",
+            },
+            Object {
+              "fontWeight": "600",
+            },
+          ]
+        }
+        numberOfLines={0}
+        separator=":"
+        style={
+          Object {
+            "marginVertical": 5,
+          }
+        }
+        value="food"
+        valueStyles={
+          Object {
+            "fontWeight": "400",
+            "marginRight": 3,
+            "textAlign": "left",
+          }
+        }
+      />
+    </View>
+  </ScrollViewMock>
 </View>
 `;
 
@@ -240,172 +235,167 @@ exports[`BeerDetailScreen test suite renders as expected without food_pairing 1`
     }
   }
 >
-  <View
+  <BackArrow
+    styleImage={
+      Object {
+        "alignSelf": "center",
+        "tintColor": "black",
+      }
+    }
+  />
+  <ScrollViewMock
+    showsVerticalScrollIndicator={false}
     style={
       Object {
         "alignSelf": "stretch",
+        "flex": 1,
+        "marginHorizontal": 10,
       }
     }
   >
-    <BackArrow
-      styleImage={
+    <Label
+      ellipsizeMode="tail"
+      style={
         Object {
-          "alignSelf": "center",
-          "tintColor": "black",
+          "color": "black",
+          "fontSize": 24,
+          "fontWeight": "500",
         }
       }
-    />
+      uppercase={false}
+    >
+      name
+    </Label>
+    <Label
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "gray",
+          "fontSize": 14,
+        }
+      }
+      uppercase={false}
+    >
+      tagline
+    </Label>
     <View
       style={
         Object {
-          "marginHorizontal": 10,
+          "alignSelf": "stretch",
+          "backgroundColor": "#F2FCF7",
+          "borderColor": "#02C66A",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "justifyContent": "center",
+          "marginVertical": 20,
+          "overflow": "hidden",
+          "paddingHorizontal": 10,
+          "paddingVertical": 15,
         }
       }
     >
       <Label
         ellipsizeMode="tail"
         style={
-          Object {
-            "color": "black",
-            "fontSize": 24,
-            "fontWeight": "500",
-          }
-        }
-        uppercase={false}
-      >
-        name
-      </Label>
-      <Label
-        ellipsizeMode="tail"
-        style={
-          Object {
-            "color": "gray",
-            "fontSize": 14,
-          }
-        }
-        uppercase={false}
-      >
-        tagline
-      </Label>
-      <View
-        style={
-          Object {
-            "alignSelf": "stretch",
-            "backgroundColor": "#F2FCF7",
-            "borderColor": "#02C66A",
-            "borderRadius": 5,
-            "borderWidth": 1,
-            "justifyContent": "center",
-            "marginVertical": 20,
-            "overflow": "hidden",
-            "paddingHorizontal": 10,
-            "paddingVertical": 15,
-          }
-        }
-      >
-        <Label
-          ellipsizeMode="tail"
-          style={
-            Array [
-              Object {
-                "fontWeight": "400",
-                "marginRight": 3,
-                "textAlign": "left",
-              },
-              Object {
-                "marginVertical": 5,
-              },
-            ]
-          }
-          uppercase={false}
-        >
-          description
-        </Label>
-      </View>
-      <View
-        style={
-          Object {
-            "alignSelf": "stretch",
-            "backgroundColor": "#F2FCF7",
-            "borderColor": "#02C66A",
-            "borderRadius": 5,
-            "borderWidth": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "overflow": "hidden",
-            "paddingHorizontal": 10,
-            "paddingVertical": 15,
-          }
-        }
-      >
-        <PropertyLabel
-          Component={[Function]}
-          ellipsizeMode="tail"
-          fontSize={14}
-          name="ABV"
-          nameStyles={
-            Array [
-              Object {
-                "fontWeight": "400",
-                "marginRight": 3,
-                "textAlign": "left",
-              },
-              Object {
-                "fontWeight": "600",
-              },
-            ]
-          }
-          numberOfLines={0}
-          separator=":"
-          style={
-            Object {
-              "marginVertical": 5,
-            }
-          }
-          value="abv"
-          valueStyles={
+          Array [
             Object {
               "fontWeight": "400",
               "marginRight": 3,
               "textAlign": "left",
-            }
-          }
-        />
-        <PropertyLabel
-          Component={[Function]}
-          ellipsizeMode="tail"
-          fontSize={14}
-          name="Volume"
-          nameStyles={
-            Array [
-              Object {
-                "fontWeight": "400",
-                "marginRight": 3,
-                "textAlign": "left",
-              },
-              Object {
-                "fontWeight": "600",
-              },
-            ]
-          }
-          numberOfLines={0}
-          separator=":"
-          style={
+            },
             Object {
               "marginVertical": 5,
-            }
-          }
-          value="20 unit"
-          valueStyles={
-            Object {
-              "fontWeight": "400",
-              "marginRight": 3,
-              "textAlign": "left",
-            }
-          }
-        />
-      </View>
+            },
+          ]
+        }
+        uppercase={false}
+      >
+        description
+      </Label>
     </View>
-  </View>
+    <View
+      style={
+        Object {
+          "alignSelf": "stretch",
+          "backgroundColor": "#F2FCF7",
+          "borderColor": "#02C66A",
+          "borderRadius": 5,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "overflow": "hidden",
+          "paddingHorizontal": 10,
+          "paddingVertical": 15,
+        }
+      }
+    >
+      <PropertyLabel
+        Component={[Function]}
+        ellipsizeMode="tail"
+        fontSize={14}
+        name="ABV"
+        nameStyles={
+          Array [
+            Object {
+              "fontWeight": "400",
+              "marginRight": 3,
+              "textAlign": "left",
+            },
+            Object {
+              "fontWeight": "600",
+            },
+          ]
+        }
+        numberOfLines={0}
+        separator=":"
+        style={
+          Object {
+            "marginVertical": 5,
+          }
+        }
+        value="abv"
+        valueStyles={
+          Object {
+            "fontWeight": "400",
+            "marginRight": 3,
+            "textAlign": "left",
+          }
+        }
+      />
+      <PropertyLabel
+        Component={[Function]}
+        ellipsizeMode="tail"
+        fontSize={14}
+        name="Volume"
+        nameStyles={
+          Array [
+            Object {
+              "fontWeight": "400",
+              "marginRight": 3,
+              "textAlign": "left",
+            },
+            Object {
+              "fontWeight": "600",
+            },
+          ]
+        }
+        numberOfLines={0}
+        separator=":"
+        style={
+          Object {
+            "marginVertical": 5,
+          }
+        }
+        value="20 unit"
+        valueStyles={
+          Object {
+            "fontWeight": "400",
+            "marginRight": 3,
+            "textAlign": "left",
+          }
+        }
+      />
+    </View>
+  </ScrollViewMock>
 </View>
 `;
