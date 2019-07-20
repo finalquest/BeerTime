@@ -31,7 +31,7 @@ describe('BeerListScreen test suite', () => {
     const wrapper = shallow(<Screen beers={beers} onItemSelected={onItemSelected} />);
     const renderItem = wrapper.find('FlatList').prop('renderItem');
     const wrapper2 = shallow(renderItem({ item: { name: 'test' } }));
-    wrapper2.find('TouchableOpacity').prop('onPress')();
+    wrapper2.find('TouchableOpacity').at(0).prop('onPress')();
     expect(onItemSelected).toBeCalledWith({ name: 'test' });
   });
 

@@ -96,5 +96,21 @@ exports[`Card test suite renders as expected 1`] = `
       }
     />
   </View>
+  <TouchableOpacity
+    onPress={[Function]}
+  >
+    <Image
+      source={1}
+      style={
+        Object {
+          "alignSelf": "center",
+          "height": 25,
+          "margin": 10,
+          "resizeMode": "contain",
+          "width": 25,
+        }
+      }
+    />
+  </TouchableOpacity>
 </TouchableOpacity>
 `;

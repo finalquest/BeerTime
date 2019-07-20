@@ -1,9 +1,12 @@
 import Enzyme, { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16.3';
 import fetch from 'jest-fetch-mock';
+import mockAsyncStorage from '@react-native-community/async-storage/jest/async-storage-mock';
 import React from 'react';
 
 const setHookState = newState => jest.fn();
+
+jest.mock('@react-native-community/async-storage', () => mockAsyncStorage);
 
 const reactMock = require('react');
 

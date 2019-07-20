@@ -21,6 +21,7 @@ export const BeerProptype = PropTypes.shape({
     unit: PropTypes.string,
   }).isRequired,
   food_pairing: PropTypes.arrayOf(PropTypes.string),
+  id: PropTypes.number.isRequired,
 });
 
 export const ChildPropType = PropTypes.oneOfType([

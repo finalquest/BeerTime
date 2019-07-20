@@ -12,6 +12,9 @@ import { BeerProptype } from '../utils/PropTypes';
 import Label from './Label';
 import PropertyLabel from './PropertyLabel';
 
+import Empty from '../../res/starEmpty.png';
+import Star from '../../res/star.png';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -42,15 +45,24 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 20, textAlign: 'left',
   },
+  icon: {
+    alignSelf: 'center',
+    margin: 10,
+    width: 25,
+    height: 25,
+    resizeMode: 'contain',
+  },
 });
 
 
-const Card = ({ beer, onItemSelected }) => {
+const Card = ({ beer, onItemSelected, addToFavs }) => {
   const {
-    image_url: imageUrl, name, tagline, first_brewed: firstBrewed,
+    image_url: imageUrl, name,
+    tagline, first_brewed: firstBrewed, id, selected,
   } = beer;
+  const imageSource = selected ? Star : Empty;
   return (
-    <TouchableOpacity style={styles.container} onPress={() => onItemSelected()}>
+    <TouchableOpacity style={styles.container} onPress={() => onItemSelected(beer)}>
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
@@ -67,12 +79,16 @@ const Card = ({ beer, onItemSelected }) => {
           separator=":"
         />
       </View>
+      <TouchableOpacity onPress={() => { addToFavs(id); }}>
+        <Image source={imageSource} style={styles.icon} />
+      </TouchableOpacity>
     </TouchableOpacity>
   );
 };
 Card.propTypes = {
   beer: BeerProptype.isRequired,
   onItemSelected: PropTypes.func.isRequired,
+  addToFavs: PropTypes.func.isRequired,
 };
 Card.defaultProps = {
 };
