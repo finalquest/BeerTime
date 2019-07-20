@@ -55,7 +55,7 @@ const BeerListScreen = ({
         }}
         keyExtractor={({ id }) => `${id}`}
         onEndReachedThreshold={0.3}
-        renderItem={({ item }) => <Card beer={item} onItemSelected={onItemSelected} />}
+        renderItem={({ item }) => <Card beer={item} onItemSelected={() => onItemSelected(item)} />}
       />
       <ModalScreen show={showModal}>
         <FilterInput

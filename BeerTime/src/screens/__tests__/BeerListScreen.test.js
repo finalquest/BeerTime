@@ -13,6 +13,28 @@ describe('BeerListScreen test suite', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('renders as expected with data', () => {
+    const beers = [{
+      name: 'name',
+    },
+    { name: 'name2' }];
+    const wrapper = shallow(<Screen beers={beers} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('call onSelect with correct value', () => {
+    const beers = [{
+      name: 'name',
+    },
+    { name: 'name2' }];
+    const onItemSelected = jest.fn();
+    const wrapper = shallow(<Screen beers={beers} onItemSelected={onItemSelected} />);
+    const renderItem = wrapper.find('FlatList').prop('renderItem');
+    const wrapper2 = shallow(renderItem({ item: { name: 'test' } }));
+    wrapper2.find('TouchableOpacity').prop('onPress')();
+    expect(onItemSelected).toBeCalledWith({ name: 'test' });
+  });
+
   it('should call onEndReached with page', () => {
     const mounted = jest.fn();
     const wrapper = shallow(<Screen page={2} onEndReached={mounted} />);

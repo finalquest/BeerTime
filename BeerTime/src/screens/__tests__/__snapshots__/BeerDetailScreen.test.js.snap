@@ -25,6 +25,13 @@ exports[`BeerDetailScreen test suite renders as expected 1`] = `
         }
       }
     />
+    <Label
+      ellipsizeMode="tail"
+      style={Object {}}
+      uppercase={false}
+    >
+      name
+    </Label>
   </View>
 </View>
 `;

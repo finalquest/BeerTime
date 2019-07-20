@@ -7,6 +7,8 @@ import {
 
 import PropTypes from 'prop-types';
 import BackArrow from '../components/BackArrow';
+import { BeerProptype } from '../utils/PropTypes';
+import Label from '../components/Label';
 
 const styles = StyleSheet.create({
   container: {
@@ -16,16 +18,18 @@ const styles = StyleSheet.create({
   },
 });
 
-const BeerDetailScreen = ({ onBack }) => (
+const BeerDetailScreen = ({ onBack, beer }) => (
   <View style={styles.container}>
     <View style={{ alignSelf: 'stretch' }}>
       <BackArrow onPress={onBack} />
+      <Label>{beer.name}</Label>
     </View>
   </View>
 );
 
 BeerDetailScreen.propTypes = {
   onBack: PropTypes.func.isRequired,
+  beer: BeerProptype.isRequired,
 };
 
 BeerDetailScreen.defaultProps = {

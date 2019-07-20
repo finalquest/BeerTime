@@ -2,6 +2,11 @@
 
 exports[`BeerList test suite renders as expected 1`] = `
 <BeerDetailScreen
+  navigation={
+    Object {
+      "getParam": [Function],
+    }
+  }
   onBack={[Function]}
 />
 `;

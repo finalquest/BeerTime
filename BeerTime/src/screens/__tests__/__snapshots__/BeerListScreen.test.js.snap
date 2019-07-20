@@ -48,3 +48,61 @@ exports[`BeerListScreen test suite renders as expected 1`] = `
   </ModalScreen>
 </View>
 `;
+
+exports[`BeerListScreen test suite renders as expected with data 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "stretch",
+      "backgroundColor": "gray",
+      "flex": 1,
+    }
+  }
+>
+  <FilterHeader
+    amount={2}
+    onFilterPressed={[Function]}
+  />
+  <FlatList
+    data={
+      Array [
+        Object {
+          "name": "name",
+        },
+        Object {
+          "name": "name2",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onEndReached={[Function]}
+    onEndReachedThreshold={0.3}
+    refreshing={false}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "gray",
+        "flex": 1,
+      }
+    }
+    updateCellsBatchingPeriod={50}
+    windowSize={21}
+  />
+  <ModalScreen
+    show={false}
+  >
+    <FilterInput
+      onFilterCancel={[Function]}
+      onFilterSelected={[Function]}
+    />
+  </ModalScreen>
+</View>
+`;

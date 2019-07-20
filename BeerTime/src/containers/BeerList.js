@@ -23,6 +23,6 @@ const mapDispatchToProps = dispatch => ({
   onMounted: (page = 0) => dispatch(getBeers(page + 1)),
   onEndReached: (page, filters) => dispatch(getBeers(page + 1, filters, true)),
   applyFilter: filters => dispatch(getBeers(1, filters)),
-  onItemSelected: () => dispatch(navigateTo(BEER_DETAIL)),
+  onItemSelected: beer => dispatch(navigateTo(BEER_DETAIL, { beer })),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(BeerListScreen);

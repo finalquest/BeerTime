@@ -7,10 +7,23 @@ import BeerDetail from '../BeerDetail';
 const mockStore = configureStore();
 const initialState = {};
 
+const navigation = {
+  getParam: (p) => {
+    switch (p) {
+      case 'context':
+        return { key: '123' };
+      case 'form':
+        return 'debin';
+      default:
+        return undefined;
+    }
+  },
+};
+
 describe('BeerList test suite', () => {
   it('renders as expected', () => {
     const wrapper = shallow(
-      <BeerDetail />,
+      <BeerDetail navigation={navigation} />,
       { context: { store: mockStore(initialState) } },
     );
     expect(wrapper).toMatchSnapshot();
