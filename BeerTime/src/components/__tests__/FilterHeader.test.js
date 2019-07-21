@@ -8,4 +8,17 @@ describe('FilterHeader test suite', () => {
     const wrapper = shallow(<FilterHeader amount={2} />);
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should call onFilter callback', () => {
+    const filter = jest.fn();
+    const wrapper = shallow(<FilterHeader amount={2} onFilterPressed={filter} />);
+    wrapper.find('TouchableOpacity').at(1).prop('onPress')();
+    expect(filter).toBeCalled();
+  });
+  it('should call onFav callback', () => {
+    const filter = jest.fn();
+    const wrapper = shallow(<FilterHeader amount={2} onFavPressed={filter} />);
+    wrapper.find('TouchableOpacity').at(0).prop('onPress')();
+    expect(filter).toBeCalled();
+  });
 });

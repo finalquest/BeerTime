@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
 const BeerListScreen = ({
   onMounted, onEndReached, endReached, refreshing,
   beers, page, name, toBrewDate,
-  fromBrewDate, applyFilter, onItemSelected, addToFavs,
+  fromBrewDate, applyFilter, onItemSelected, addToFavs, toggleFavs,
+  showFavs,
 }) => {
   useEffect(() => { onMounted(); }, []);
   const [showModal, setShowModal] = useState(false);
@@ -39,10 +40,12 @@ const BeerListScreen = ({
   return (
     <View style={styles.container}>
       <FilterHeader
+        showFav={showFavs}
         amount={beers.length}
         onFilterPressed={() => {
           setShowModal(true);
         }}
+        onFavPressed={toggleFavs}
       />
       <FlatList
         style={styles.container}
@@ -92,6 +95,8 @@ BeerListScreen.propTypes = {
   toBrewDate: PropTypes.string,
   onItemSelected: PropTypes.func.isRequired,
   addToFavs: PropTypes.func.isRequired,
+  toggleFavs: PropTypes.func.isRequired,
+  showFavs: PropTypes.bool.isRequired,
 };
 
 BeerListScreen.defaultProps = {

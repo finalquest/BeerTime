@@ -39,19 +39,41 @@ exports[`FilterHeader test suite renders as expected 1`] = `
       }
     }
   />
-  <TouchableOpacity>
-    <Image
-      source={1}
-      style={
-        Object {
-          "alignSelf": "center",
-          "height": 25,
-          "margin": 10,
-          "resizeMode": "contain",
-          "width": 25,
-        }
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
       }
-    />
-  </TouchableOpacity>
+    }
+  >
+    <TouchableOpacity>
+      <Image
+        source={1}
+        style={
+          Object {
+            "alignSelf": "center",
+            "height": 25,
+            "margin": 10,
+            "resizeMode": "contain",
+            "width": 25,
+          }
+        }
+      />
+    </TouchableOpacity>
+    <TouchableOpacity>
+      <Image
+        source={1}
+        style={
+          Object {
+            "alignSelf": "center",
+            "height": 25,
+            "margin": 10,
+            "resizeMode": "contain",
+            "width": 25,
+          }
+        }
+      />
+    </TouchableOpacity>
+  </View>
 </View>
 `;

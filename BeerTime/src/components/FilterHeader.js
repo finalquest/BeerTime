@@ -8,7 +8,9 @@ import {
 import PropTypes from 'prop-types';
 import PropertyLabel from './PropertyLabel';
 
-import Empty from '../../res/emptyBox.png';
+import Box from '../../res/emptyBox.png';
+import Empty from '../../res/starEmpty.png';
+import Star from '../../res/star.png';
 
 
 const styles = StyleSheet.create({
@@ -29,23 +31,36 @@ const styles = StyleSheet.create({
 });
 
 
-const FilterHeader = ({ amount, onFilterPressed }) => (
-  <View style={styles.container}>
-    <PropertyLabel
-      name="Total beers"
-      style={{ flex: 1, alignItems: 'center' }}
-      nameStyles={{ fontWeight: '600', marginLeft: 10 }}
-      value={amount.toString()}
-      separator=":"
-    />
-    <TouchableOpacity onPress={onFilterPressed}>
-      <Image source={Empty} style={styles.icon} />
-    </TouchableOpacity>
-  </View>
-);
+const FilterHeader = ({
+  amount, onFilterPressed, onFavPressed, showFav,
+}) => {
+  const Source = showFav ? Star : Empty;
+  return (
+    <View style={styles.container}>
+      <PropertyLabel
+        name="Total beers"
+        style={{ flex: 1, alignItems: 'center' }}
+        nameStyles={{ fontWeight: '600', marginLeft: 10 }}
+        value={amount.toString()}
+        separator=":"
+      />
+      <View style={{ flexDirection: 'row' }}>
+        <TouchableOpacity onPress={onFavPressed}>
+          <Image source={Source} style={styles.icon} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={onFilterPressed}>
+          <Image source={Box} style={styles.icon} />
+        </TouchableOpacity>
+      </View>
+
+    </View>
+  );
+};
 FilterHeader.propTypes = {
   amount: PropTypes.number,
   onFilterPressed: PropTypes.func.isRequired,
+  onFavPressed: PropTypes.func.isRequired,
+  showFav: PropTypes.bool.isRequired,
 };
 FilterHeader.defaultProps = {
   amount: 0,

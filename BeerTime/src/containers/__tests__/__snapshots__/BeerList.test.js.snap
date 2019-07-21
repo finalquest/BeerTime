@@ -13,5 +13,6 @@ exports[`BeerList test suite renders as expected 1`] = `
   page={1}
   refreshing={false}
   toBrewDate=""
+  toggleFavs={[Function]}
 />
 `;

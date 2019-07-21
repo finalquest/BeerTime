@@ -1,6 +1,7 @@
 import {
   GET_BEERS, GET_BEERS_FILTER,
   UPDATE_IDS,
+  TOGGLE_FAVS,
 } from '../model/const/actionNames';
 
 const initialState = {
@@ -10,11 +11,25 @@ const initialState = {
   endReached: false,
   toBrewDate: '',
   fromBrewDate: '',
+  showFavs: false,
+  filteredBeers: [],
 };
 
 const updatedBeers = (beers, ids) => beers.map(item => (
   { ...item, selected: ids.indexOf(item.id) !== -1 }
 ));
+
+const filterBeers = (state) => {
+  const { beers, showFavs = false } = state;
+  if (showFavs) {
+    const filteredBeers = beers.filter(item => item.selected === true);
+    return { ...state, showFavs, filteredBeers };
+  }
+
+  return {
+    ...state, showFavs, filteredBeers: beers,
+  };
+};
 
 const beer = (state = initialState, action) => {
   const { type } = action;
@@ -26,8 +41,10 @@ const beer = (state = initialState, action) => {
       const name = page === 1 ? undefined : state.name;
       const fromBrewDate = page === 1 ? '' : state.fromBrewDate;
       const toBrewDate = page === 1 ? '' : state.toBrewDate;
+      const showFavs = page === 1 ? false : state.showFavs;
       const endReached = result.length === 0;
-      return {
+
+      return filterBeers({
         ...state,
         beers: updatedBeers(totalBeers, favoritesIds),
         page,
@@ -36,7 +53,8 @@ const beer = (state = initialState, action) => {
         toBrewDate,
         endReached,
         favoritesIds,
-      };
+        showFavs,
+      });
     }
     case GET_BEERS_FILTER: {
       const {
@@ -46,14 +64,17 @@ const beer = (state = initialState, action) => {
       } = action;
       const { favoritesIds = [] } = state;
       const endReached = result.length === 0;
+      const beers = updatedBeers(result, favoritesIds);
       return {
         ...state,
-        beers: updatedBeers(result, favoritesIds),
+        beers,
         page,
         name,
         endReached,
         fromBrewDate,
         toBrewDate,
+        showFavs: false,
+        filteredBeers: beers,
       };
     }
     case UPDATE_IDS: {
@@ -61,9 +82,12 @@ const beer = (state = initialState, action) => {
         value: ids,
       } = action;
 
-      return {
+      return filterBeers({
         ...state, beers: updatedBeers(state.beers, ids), favoritesIds: ids,
-      };
+      });
+    }
+    case TOGGLE_FAVS: {
+      return filterBeers({ ...state, showFavs: !state.showFavs });
     }
     default:
       return state;

@@ -5,3 +5,4 @@ export const API_TRANSACTION_CANCEL = 'API_TRANSACTION_CANCEL';
 export const GET_BEERS = 'GET_BEERS';
 export const GET_BEERS_FILTER = 'GET_BEERS_FILTER';
 export const UPDATE_IDS = 'UPDATE_IDS';
+export const TOGGLE_FAVS = 'TOGGLE_FAVS';
