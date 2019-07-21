@@ -26,6 +26,7 @@ exports[`FilterInput test suite renders as expected 1`] = `
     Search
   </Label>
   <TextInput
+    error=""
     keyboardType="default"
     label="Beer Name"
     labelStyle={
@@ -46,6 +47,7 @@ exports[`FilterInput test suite renders as expected 1`] = `
     }
   />
   <TextInput
+    error=""
     keyboardType="default"
     label="After First Brew Date"
     labelStyle={
@@ -67,6 +69,7 @@ exports[`FilterInput test suite renders as expected 1`] = `
     value=""
   />
   <TextInput
+    error=""
     keyboardType="default"
     label="Before First Brew Date"
     labelStyle={

@@ -44,7 +44,7 @@ TextInput.defaultProps = {
   labelStyle: undefined,
   keyboardType: 'default',
   value: undefined,
-  error: undefined,
+  error: '',
 };
 
 export default TextInput;
