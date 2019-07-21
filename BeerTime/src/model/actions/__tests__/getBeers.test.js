@@ -1,10 +1,9 @@
-import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
 import apiMiddleware from '../../../middlewares/api';
 import getBeers from '../getBeers';
 
 
-const mockStore = configureStore([apiMiddleware, thunk]);
+const mockStore = configureStore([apiMiddleware]);
 const initialState = {
 };
 const response = {

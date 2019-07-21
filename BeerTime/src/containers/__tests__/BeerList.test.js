@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
+import * as storage from '../../utils/updateBeerStorage';
 
 import BeerList from '../BeerList';
 
@@ -138,5 +139,29 @@ describe('BeerList test suite', () => {
         params: { beer: { name: 'name', tagline: 'tagline' } },
       }],
     );
+  });
+
+  it('should dispacth addToFavs action', () => {
+    const addToFavs = jest.fn();
+    storage.updateBeerStorage = addToFavs;
+    const store = mockStore({ ...initialState });
+    const wrapper = shallow(
+      <BeerList />,
+      { context: { store } },
+    );
+    wrapper.find('BeerListScreen').prop('addToFavs')(1);
+    expect(addToFavs).toBeCalled();
+  });
+
+  it('should toggle favs', () => {
+    const addToFavs = jest.fn();
+    storage.updateBeerStorage = addToFavs;
+    const store = mockStore({ ...initialState });
+    const wrapper = shallow(
+      <BeerList />,
+      { context: { store } },
+    );
+    wrapper.find('BeerListScreen').prop('toggleFavs')();
+    expect(store.getActions()).toEqual([{ type: 'TOGGLE_FAVS' }]);
   });
 });

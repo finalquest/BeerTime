@@ -1,6 +1,5 @@
 import { applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
-import ReduxThunk from 'redux-thunk';
 import navigation from '../middlewares/navigation';
 import ApiFetch from '../middlewares/api';
 
@@ -13,7 +12,6 @@ const devMiddleware = __DEV__ ? [logger] : [];
 
 export default applyMiddleware(
   ...devMiddleware,
-  ReduxThunk,
   navigation,
   ApiFetch,
 );

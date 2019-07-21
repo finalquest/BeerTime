@@ -17,5 +17,6 @@ export const updateBeerStorage = (id, dispatch) => AsyncStorage.getItem('beers')
   return dispatch(updateIdAction(updatedId));
 });
 
+
 export const getBeersFromStorage = dispatch => AsyncStorage.getItem('beers')
   .then((ids = []) => dispatch(updateIdAction(ids)));
