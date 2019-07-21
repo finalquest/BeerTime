@@ -15,6 +15,7 @@ describe('beer reducer test suite', () => {
       toBrewDate: '',
       showFavs: false,
       filteredBeers: [],
+      favoritesIds: [],
     });
   });
 

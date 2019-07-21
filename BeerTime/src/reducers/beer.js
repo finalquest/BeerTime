@@ -13,9 +13,10 @@ const initialState = {
   fromBrewDate: '',
   showFavs: false,
   filteredBeers: [],
+  favoritesIds: [],
 };
 
-const updatedBeers = (beers, ids) => beers.map(item => (
+const updatedBeers = (beers, ids = []) => beers.map(item => (
   { ...item, selected: ids.indexOf(item.id) !== -1 }
 ));
 
@@ -79,9 +80,10 @@ const beer = (state = initialState, action) => {
     }
     case UPDATE_IDS: {
       const {
-        value: ids,
+        value: storeIds,
       } = action;
 
+      const ids = storeIds === null ? [] : storeIds;
       return filterBeers({
         ...state, beers: updatedBeers(state.beers, ids), favoritesIds: ids,
       });
